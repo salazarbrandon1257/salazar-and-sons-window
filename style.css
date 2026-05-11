@@ -293,82 +293,95 @@ img {
 .shape {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
-    animation: shapePulse 20s ease-in-out infinite;
+    animation: shapeFloat 20s ease-in-out infinite;
 }
 
 .shape-1 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
-    top: -15%;
-    right: -8%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.35) 0%, rgba(245, 158, 11, 0.05) 50%, transparent 70%);
+    top: -10%;
+    right: -5%;
     animation-duration: 25s;
     animation-delay: 0s;
-    box-shadow: 0 0 120px rgba(245, 158, 11, 0.15);
+    filter: blur(60px);
+    box-shadow:
+        0 0 60px rgba(245, 158, 11, 0.2),
+        0 0 120px rgba(245, 158, 11, 0.08);
 }
 
 .shape-2 {
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
-    bottom: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(245, 158, 11, 0.03) 50%, transparent 70%);
+    bottom: -8%;
     left: -5%;
     animation-duration: 22s;
     animation-delay: -5s;
-    box-shadow: 0 0 100px rgba(245, 158, 11, 0.1);
+    filter: blur(50px);
+    box-shadow:
+        0 0 50px rgba(245, 158, 11, 0.15),
+        0 0 100px rgba(245, 158, 11, 0.06);
 }
 
 .shape-3 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
-    top: 35%;
-    left: 25%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 50%, transparent 70%);
+    top: 40%;
+    left: 30%;
     animation-duration: 18s;
     animation-delay: -8s;
-    box-shadow: 0 0 80px rgba(255, 255, 255, 0.04);
+    filter: blur(40px);
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.05);
 }
 
 .shape-4 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
-    top: 15%;
-    right: 25%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.03) 50%, transparent 70%);
+    top: 20%;
+    right: 20%;
     animation-duration: 20s;
     animation-delay: -3s;
-    box-shadow: 0 0 90px rgba(245, 158, 11, 0.1);
+    filter: blur(55px);
+    box-shadow:
+        0 0 55px rgba(245, 158, 11, 0.15),
+        0 0 100px rgba(245, 158, 11, 0.05);
 }
 
-/* Subtle geometric grid lines */
+/* Subtle geometric grid overlay */
 .hero-grid {
     position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 0;
     background-image:
-        linear-gradient(rgba(245, 158, 11, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245, 158, 11, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(245, 158, 11, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
     background-size: 80px 80px;
 }
 
-@keyframes shapePulse {
+@keyframes shapeFloat {
     0%, 100% {
-        opacity: 0.3;
-        transform: scale(1) translate(0, 0);
+        transform: scale(1) translate(0, 0) rotate(0deg);
+        opacity: 0.5;
     }
-    25% {
-        opacity: 0.6;
-        transform: scale(1.1) translate(20px, -30px);
+    20% {
+        transform: scale(1.08) translate(30px, -25px) rotate(2deg);
+        opacity: 0.7;
     }
-    50% {
+    40% {
+        transform: scale(0.95) translate(-20px, 15px) rotate(-1deg);
         opacity: 0.4;
-        transform: scale(0.95) translate(-15px, 20px);
     }
-    75% {
+    60% {
+        transform: scale(1.04) translate(15px, 30px) rotate(1deg);
+        opacity: 0.6;
+    }
+    80% {
+        transform: scale(0.98) translate(-25px, -15px) rotate(-2deg);
         opacity: 0.55;
-        transform: scale(1.05) translate(10px, 15px);
     }
 }
 
