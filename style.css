@@ -238,6 +238,14 @@ img {
     padding: 120px 24px 100px;
 }
 
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+    pointer-events: none;
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -271,6 +279,97 @@ img {
     height: 3px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
     opacity: 0.6;
+}
+
+/* --- Hero Abstract Background Shapes --- */
+.hero-bg-shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: shapePulse 20s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
+    top: -15%;
+    right: -8%;
+    animation-duration: 25s;
+    animation-delay: 0s;
+    box-shadow: 0 0 120px rgba(245, 158, 11, 0.15);
+}
+
+.shape-2 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+    bottom: -10%;
+    left: -5%;
+    animation-duration: 22s;
+    animation-delay: -5s;
+    box-shadow: 0 0 100px rgba(245, 158, 11, 0.1);
+}
+
+.shape-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    top: 35%;
+    left: 25%;
+    animation-duration: 18s;
+    animation-delay: -8s;
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.04);
+}
+
+.shape-4 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+    top: 15%;
+    right: 25%;
+    animation-duration: 20s;
+    animation-delay: -3s;
+    box-shadow: 0 0 90px rgba(245, 158, 11, 0.1);
+}
+
+/* Subtle geometric grid lines */
+.hero-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+        linear-gradient(rgba(245, 158, 11, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 158, 11, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+}
+
+@keyframes shapePulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1) translate(0, 0);
+    }
+    25% {
+        opacity: 0.6;
+        transform: scale(1.1) translate(20px, -30px);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(0.95) translate(-15px, 20px);
+    }
+    75% {
+        opacity: 0.55;
+        transform: scale(1.05) translate(10px, 15px);
+    }
 }
 
 .hero-content {
