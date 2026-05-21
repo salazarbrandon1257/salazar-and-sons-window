@@ -1,397 +1,701 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salazar & Sons Window Co. | Window Replacement & Repair</title>
-    <meta name="description" content="Professional window replacement and repair services. Quality craftsmanship, energy-efficient windows, and trusted service. Call today for a free estimate.">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salazar & Sons Window Co. | Dallas-Fort Worth</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --gold: #c9a84c;
+    --gold-light: #e8c870;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --gray: #8892a4;
+    --light-gray: #e8edf5;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(10,22,40,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--white); text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: var(--gray); text-decoration: none;
+    font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy);
+    padding: 0.65rem 1.6rem; border-radius: 2px;
+    font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 10% 80%, rgba(17,34,64,0.9) 0%, transparent 50%);
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+    padding: 0.4rem 1rem; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-badge::before { content: '●'; font-size: 0.5rem; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 900; line-height: 1.05;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s ease 0.1s both;
+  }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero p {
+    font-size: 1.1rem; color: var(--gray); line-height: 1.7;
+    max-width: 480px; margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+  .hero-buttons {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 1rem 2.2rem; border-radius: 2px;
+    font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; letter-spacing: 0.05em;
+    transition: all 0.3s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
+  .btn-secondary {
+    background: transparent; color: var(--white);
+    padding: 1rem 2.2rem; border-radius: 2px;
+    font-weight: 500; font-size: 0.95rem;
+    text-decoration: none; letter-spacing: 0.05em;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s; display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-visual {
+    position: relative; z-index: 2;
+    display: flex; justify-content: center; align-items: center;
+    animation: fadeIn 1.2s ease 0.4s both;
+  }
+  .window-showcase {
+    width: 380px; height: 420px;
+    position: relative;
+  }
+  .window-frame-large {
+    width: 100%; height: 100%;
+    border: 3px solid var(--gold);
+    border-radius: 4px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3px; padding: 3px;
+    background: var(--gold);
+    position: relative;
+    box-shadow: 0 0 60px rgba(201,168,76,0.2), inset 0 0 40px rgba(201,168,76,0.05);
+  }
+  .window-pane {
+    background: linear-gradient(135deg, rgba(17,34,64,0.8) 0%, rgba(10,22,40,0.6) 100%);
+    position: relative; overflow: hidden;
+  }
+  .window-pane::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 50%, rgba(255,255,255,0.03) 100%);
+  }
+  .window-reflection {
+    position: absolute; top: 10%; left: 15%;
+    width: 30%; height: 60%;
+    background: linear-gradient(160deg, rgba(255,255,255,0.08) 0%, transparent 100%);
+    border-radius: 2px;
+    transform: skewX(-5deg);
+  }
+  .badge-float {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--gold); color: var(--navy);
+    width: 110px; height: 110px; border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 10px 40px rgba(201,168,76,0.4);
+    animation: spin-slow 20s linear infinite;
+  }
+  .badge-float .num { font-size: 1.8rem; font-weight: 900; line-height: 1; }
+  .badge-float .txt { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; }
+
+  /* ── STATS ── */
+  .stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    background: var(--navy-mid);
+  }
+  .stat {
+    padding: 2.5rem 3rem; text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.15);
+    transition: background 0.3s;
+  }
+  .stat:last-child { border-right: none; }
+  .stat:hover { background: rgba(201,168,76,0.05); }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; font-weight: 900;
+    color: var(--gold); line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label { font-size: 0.85rem; color: var(--gray); letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* ── SERVICES ── */
+  .services {
+    padding: 7rem 4rem;
+    background: var(--navy);
+  }
+  .section-header { text-align: center; margin-bottom: 4rem; }
+  .section-tag {
+    display: inline-block;
+    color: var(--gold); font-size: 0.8rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 500; margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700; line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section-sub { color: var(--gray); font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.1);
+  }
+  .service-card {
+    background: var(--navy-mid);
+    padding: 3rem 2.5rem;
+    transition: all 0.4s; cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: var(--gold);
+    transform: scaleX(0); transition: transform 0.4s;
+  }
+  .service-card:hover { background: rgba(17,34,64,0.95); transform: translateY(-4px); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 60px; height: 60px; margin-bottom: 1.5rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .service-icon svg { width: 100%; height: 100%; }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    margin-bottom: 1rem; color: var(--white);
+  }
+  .service-card p { color: var(--gray); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .service-link {
+    color: var(--gold); font-size: 0.85rem;
+    font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: gap 0.3s;
+  }
+  .service-card:hover .service-link { gap: 0.8rem; }
+
+  /* ── WHY US ── */
+  .why {
+    padding: 7rem 4rem;
+    background: var(--cream); color: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  .why::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border: 60px solid rgba(201,168,76,0.08);
+    border-radius: 50%;
+  }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .why-content .section-tag { color: var(--gold); }
+  .why-content .section-title { color: var(--navy); text-align: left; }
+  .why-content .section-sub { color: #556; text-align: left; margin: 0 0 2.5rem; }
+  .why-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .why-feature {
+    display: flex; gap: 1rem; align-items: flex-start;
+  }
+  .why-feature-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--gold); border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--navy); font-size: 1.1rem; font-weight: 700;
+  }
+  .why-feature h4 { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; color: var(--navy); }
+  .why-feature p { font-size: 0.85rem; color: #667; line-height: 1.5; }
+  .why-visual {
+    display: grid; grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; gap: 1rem;
+    height: 420px;
+  }
+  .why-box {
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem; font-weight: 600;
+    text-align: center; padding: 1.5rem;
+    transition: transform 0.3s;
+  }
+  .why-box:hover { transform: scale(1.02); }
+  .why-box-1 { background: var(--navy); color: var(--white); grid-row: span 2; font-size: 1.1rem; flex-direction: column; gap: 1rem; }
+  .why-box-1 .big-num { font-size: 3.5rem; font-weight: 900; color: var(--gold); line-height: 1; }
+  .why-box-2 { background: var(--gold); color: var(--navy); }
+  .why-box-3 { background: #e0dbd0; color: var(--navy); }
+
+  /* ── PROCESS ── */
+  .process {
+    padding: 7rem 4rem;
+    background: var(--navy-mid);
+  }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; margin-top: 4rem; position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute; top: 40px; left: 10%; right: 10%;
+    height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .process-step { padding: 2rem; text-align: center; }
+  .step-num {
+    width: 80px; height: 80px; margin: 0 auto 1.5rem;
+    border: 2px solid var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 900; color: var(--gold);
+    background: var(--navy-mid); position: relative; z-index: 1;
+    transition: all 0.3s;
+  }
+  .process-step:hover .step-num { background: var(--gold); color: var(--navy); }
+  .process-step h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.7rem; }
+  .process-step p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    padding: 7rem 4rem;
+    background: var(--navy);
+  }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .testimonial-card {
+    background: var(--navy-mid); padding: 2.5rem;
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 2px; position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .testimonial-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); }
+  .testimonial-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem; color: var(--gold); opacity: 0.3;
+    position: absolute; top: 0.5rem; left: 1.5rem; line-height: 1;
+  }
+  .testimonial-text { color: var(--gray); line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.95rem; padding-top: 1rem; }
+  .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+  .author-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--navy));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.1rem;
+  }
+  .author-name { font-weight: 600; font-size: 0.95rem; }
+  .author-loc { color: var(--gray); font-size: 0.8rem; }
+  .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.3rem; }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 7rem 4rem;
+    background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 60%);
+  }
+  .cta-section .section-title { position: relative; z-index: 1; }
+  .cta-section p { color: var(--gray); font-size: 1.1rem; max-width: 500px; margin: 1rem auto 2.5rem; position: relative; z-index: 1; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+  .phone-link {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    color: var(--white); font-size: 1.4rem;
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    text-decoration: none; margin-top: 1.5rem;
+    transition: color 0.3s; position: relative; z-index: 1;
+  }
+  .phone-link:hover { color: var(--gold); }
+  .phone-icon { font-size: 1.2rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060f1c; padding: 3rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700; color: var(--white);
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-info { color: var(--gray); font-size: 0.85rem; line-height: 1.8; text-align: center; }
+  .footer-info a { color: var(--gold); text-decoration: none; }
+  .footer-copy { color: var(--gray); font-size: 0.8rem; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
+    .hero-visual { display: none; }
+    .stats { grid-template-columns: 1fr; }
+    .stat { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); }
+    .services { padding: 4rem 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; gap: 2px; }
+    .why { padding: 4rem 1.5rem; }
+    .why-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .why-visual { display: none; }
+    .process { padding: 4rem 1.5rem; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .testimonials { padding: 4rem 1.5rem; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .cta-section { padding: 4rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Salazar & Sons&nbsp;<span class="nav-logo-span">Window Co.</span></a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#process">Our Process</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Salazar <span>&</span> Sons</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <a href="tel:4699949236" class="nav-cta">Free Estimate</a>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-grid"></div>
-        <div class="hero-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
-        </div>
-        <div class="hero-content">
-            <h1>Quality Window Replacement & Repair</h1>
-            <p>Trusted by homeowners across the region for expert craftsmanship, premium materials, and honest pricing. Your comfort starts with better windows.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-gold">Get Free Estimate</a>
-                <a href="#services" class="btn btn-outline-gold">Our Services</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <strong>15+</strong>
-                    <span>Years Experience</span>
-                </div>
-                <div class="stat">
-                    <strong>2,000+</strong>
-                    <span>Windows Installed</span>
-                </div>
-                <div class="stat">
-                    <strong>5-Star</strong>
-                    <span>Rated Service</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Serving All of DFW</div>
+    <h1>Windows Done<br><em>Right.</em></h1>
+    <p>Family-owned and operated in Dallas, TX. We install, replace, and repair windows with craftsmanship you can see and quality that lasts.</p>
+    <div class="hero-buttons">
+      <a href="tel:4699949236" class="btn-primary">Call for Free Estimate</a>
+      <a href="#services" class="btn-secondary">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="window-showcase">
+      <div class="window-frame-large">
+        <div class="window-pane"><div class="window-reflection"></div></div>
+        <div class="window-pane"><div class="window-reflection"></div></div>
+        <div class="window-pane"><div class="window-reflection"></div></div>
+        <div class="window-pane"><div class="window-reflection"></div></div>
+      </div>
+      <div class="badge-float">
+        <span class="num">DFW</span>
+        <span class="txt">Local & Trusted</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Services</h2>
-                <p>We offer comprehensive window solutions for every need</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Window Repair</h3>
-                    <p>Broken glass, damaged frames, faulty hardware — we fix it all quickly and affordably. Restore your windows to like-new condition.</p>
-                    <ul class="service-features">
-                        <li>Cracked or broken glass replacement</li>
-                        <li>Frame and sash repair</li>
-                        <li>Hardware and lock replacement</li>
-                        <li>Seal and weatherstripping repair</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Window Replacement</h3>
-                    <p>Upgrade to energy-efficient, beautiful windows that enhance your home's comfort, curb appeal, and value.</p>
-                    <ul class="service-features">
-                        <li>Double & triple pane options</li>
-                        <li>Vinyl, wood & fiberglass frames</li>
-                        <li>Custom sizes & styles</li>
-                        <li>Energy Star rated products</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">❄️</div>
-                    <h3>Energy Efficiency Upgrades</h3>
-                    <p>Lower your energy bills with our premium insulated window installations and weatherproofing services.</p>
-                    <ul class="service-features">
-                        <li>Low-E glass coatings</li>
-                        <li>Argon gas fills</li>
-                        <li>Insulated frame technology</li>
-                        <li>Professional weatherproofing</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>Custom Window Installation</h3>
-                    <p>Specialty shapes, sizes, and styles for unique architectural needs. Bespoke solutions for your home.</p>
-                    <ul class="service-features">
-                        <li>Bay & bow windows</li>
-                        <li>Custom shapes & arches</li>
-                        <li>Sliding & patio doors</li>
-                        <li>Historic replication</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <h3>Storm Damage Repair</h3>
-                    <p>Fast emergency response for storm-damaged windows. Board-up, temporary fixes, and full replacements.</p>
-                    <ul class="service-features">
-                        <li>Emergency board-up service</li>
-                        <li>Insurance claim assistance</li>
-                        <li>Fast temporary repairs</li>
-                        <li>Full replacement when needed</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3>Window Maintenance</h3>
-                    <p>Keep your windows in peak condition with our professional maintenance and inspection services.</p>
-                    <ul class="service-features">
-                        <li>Annual inspection plans</li>
-                        <li>Track & screen replacement</li>
-                        <li>Cleaning & lubrication</li>
-                        <li>Preventive maintenance</li>
-                    </ul>
-                </div>
-            </div>
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Licensed & Registered</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">DFW</div>
+    <div class="stat-label">Wide Service Area</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">Free</div>
+    <div class="stat-label">Estimates Always</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Whether you need a brand-new installation, a full replacement, or a quick repair — we have you covered across the entire DFW area.</p>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="5" width="50" height="50" rx="2" stroke="#c9a84c" stroke-width="2.5"/>
+          <line x1="30" y1="5" x2="30" y2="55" stroke="#c9a84c" stroke-width="2"/>
+          <line x1="5" y1="30" x2="55" y2="30" stroke="#c9a84c" stroke-width="2"/>
+          <circle cx="30" cy="30" r="4" fill="#c9a84c"/>
+        </svg>
+      </div>
+      <h3>Window Installation</h3>
+      <p>New construction or first-time installation — we handle the entire process from measurement to finishing, ensuring a perfect fit and seal every time.</p>
+      <a href="tel:4699949236" class="service-link">Get a Quote →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="5" width="50" height="50" rx="2" stroke="#c9a84c" stroke-width="2.5"/>
+          <line x1="30" y1="5" x2="30" y2="55" stroke="#c9a84c" stroke-width="2"/>
+          <line x1="5" y1="30" x2="55" y2="30" stroke="#c9a84c" stroke-width="2"/>
+          <path d="M38 18 L48 8 M48 8 L52 12 M48 8 L44 12" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Window Replacement</h3>
+      <p>Upgrade old, drafty, or damaged windows with modern energy-efficient options. We remove the old and install the new with minimal disruption to your home.</p>
+      <a href="tel:4699949236" class="service-link">Get a Quote →</a>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="5" width="50" height="50" rx="2" stroke="#c9a84c" stroke-width="2.5"/>
+          <line x1="30" y1="5" x2="30" y2="55" stroke="#c9a84c" stroke-width="2"/>
+          <line x1="5" y1="30" x2="55" y2="30" stroke="#c9a84c" stroke-width="2"/>
+          <circle cx="42" cy="42" r="8" stroke="#c9a84c" stroke-width="2"/>
+          <line x1="42" y1="38" x2="42" y2="46" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+          <line x1="38" y1="42" x2="46" y2="42" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Window Repair</h3>
+      <p>Broken glass, faulty hardware, failed seals, or damaged frames — we diagnose and fix window issues fast so your home stays secure and energy-efficient.</p>
+      <a href="tel:4699949236" class="service-link">Get a Quote →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div class="why-content">
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title">Local Family.<br>Real Craftsmanship.</h2>
+      <p class="section-sub">When you call Salazar & Sons, you're not calling a call center. You're calling a Dallas family that stands behind every job.</p>
+      <div class="why-features">
+        <div class="why-feature">
+          <div class="why-feature-icon">✓</div>
+          <div>
+            <h4>Licensed & Registered</h4>
+            <p>Fully registered with the City of Dallas Building Inspection Division.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="about-img-placeholder">
-                        <span class="placeholder-icon">🏗️</span>
-                        <span class="placeholder-text">Salazar & Sons<br>Professional Installation</span>
-                    </div>
-                </div>
-                <div class="about-content">
-                    <div class="section-header left">
-                        <h2>About Us</h2>
-                        <p>Our story</p>
-                    </div>
-                    <p class="about-text">At <strong>Salazar & Sons Window Co.</strong>, we're a family-owned business built on a foundation of hard work, quality craftsmanship, and genuine care for our customers. What started as a father-son operation has grown into a trusted team of skilled professionals dedicated to making your home more comfortable, energy-efficient, and beautiful.</p>
-                    <p class="about-text">With over <strong>15 years of experience</strong> in the window industry, we've installed and repaired thousands of windows for homeowners across the region. We pride ourselves on doing the job right the first time — every time.</p>
-                    <div class="about-values">
-                        <div class="value">
-                            <span class="value-icon">✅</span>
-                            <div>
-                                <h4>Licensed & Insured</h4>
-                                <p>Fully certified and protected</p>
-                            </div>
-                        </div>
-                        <div class="value">
-                            <span class="value-icon">✅</span>
-                            <div>
-                                <h4>Free Estimates</h4>
-                                <p>No hidden costs or surprises</p>
-                            </div>
-                        </div>
-                        <div class="value">
-                            <span class="value-icon">✅</span>
-                            <div>
-                                <h4>Warranty on All Work</h4>
-                                <p>Guaranteed satisfaction</p>
-                            </div>
-                        </div>
-                        <div class="value">
-                            <span class="value-icon">✅</span>
-                            <div>
-                                <h4>Financing Available</h4>
-                                <p>Flexible payment options</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">★</div>
+          <div>
+            <h4>Quality Materials</h4>
+            <p>We use only trusted, energy-efficient window products built to last.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process" id="process">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Process</h2>
-                <p>Simple, transparent, and stress-free from start to finish</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <h3>Free Consultation</h3>
-                    <p>We visit your home, assess your windows, and discuss your needs, preferences, and budget.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <h3>Custom Quote</h3>
-                    <p>We provide a detailed, transparent quote with no hidden fees. You'll know exactly what you're paying for.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <h3>Professional Installation</h3>
-                    <p>Our experienced team installs your new windows carefully and efficiently, with minimal disruption to your home.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <h3>Quality Check & Cleanup</h3>
-                    <p>We inspect every window, ensure perfect operation, and leave your home clean and tidy.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">05</div>
-                    <h3>Follow-Up Support</h3>
-                    <p>We stand behind our work. Reach out anytime for support, and we'll make sure you're 100% satisfied.</p>
-                </div>
-            </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">$</div>
+          <div>
+            <h4>Honest Pricing</h4>
+            <p>Free estimates, transparent quotes — no hidden fees, ever.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Our Customers Say</h2>
-                <p>Real reviews from real homeowners</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Salazar & Sons replaced all 12 windows in our home. The quality of work was outstanding, and the pricing was very fair. Our energy bills have dropped significantly!"</p>
-                    <div class="testimonial-author">
-                        <strong>Maria G.</strong>
-                        <span>Homeowner</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"Had a broken window from a storm and they came out the same day. Professional, fast, and affordable. Highly recommend this team!"</p>
-                    <div class="testimonial-author">
-                        <strong>Robert T.</strong>
-                        <span>Homeowner</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">"The Salazar family really knows their craft. We had custom bay windows installed and they look incredible. Great communication throughout the entire process."</p>
-                    <div class="testimonial-author">
-                        <strong>Linda & James K.</strong>
-                        <span>Homeowner</span>
-                    </div>
-                </div>
-            </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">⚡</div>
+          <div>
+            <h4>Fast Turnaround</h4>
+            <p>We respect your time and work efficiently to get the job done right.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="why-box why-box-1">
+        <div class="big-num">DFW</div>
+        Proudly Serving Dallas-Fort Worth
+      </div>
+      <div class="why-box why-box-2">Family Owned & Operated</div>
+      <div class="why-box why-box-3">Free Estimates on Every Job</div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="section-header left">
-                        <h2>Contact Us</h2>
-                        <p>Get your free estimate today</p>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">📞</span>
-                        <div>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+15551234567">(555) 123-4567</a></p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">📧</span>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:info@salazarandsonswindowco.com">info@salazarandsonswindowco.com</a></p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">📍</span>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Your City, State 12345</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">🕐</span>
-                        <div>
-                            <h4>Business Hours</h4>
-                            <p>Mon–Fri: 7AM – 6PM<br>Sat: 8AM – 4PM<br>Sun: By appointment</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
-                        <a href="#" class="social-link" aria-label="Instagram">📸</a>
-                        <a href="#" class="social-link" aria-label="Nextdoor">🏘️</a>
-                    </div>
-                </div>
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="John Smith">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Needed *</label>
-                            <select id="service" name="service" required>
-                                <option value="" disabled selected>Select a service</option>
-                                <option value="repair">Window Repair</option>
-                                <option value="replacement">Window Replacement</option>
-                                <option value="energy">Energy Efficiency Upgrade</option>
-                                <option value="custom">Custom Window Installation</option>
-                                <option value="storm">Storm Damage Repair</option>
-                                <option value="maintenance">Window Maintenance</option>
-                                <option value="other">Other / General Inquiry</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message / Details *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project — what windows need attention, how many, etc."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                        <p class="form-note">We'll respond within 24 hours. Your information is never shared.</p>
-                    </form>
-                </div>
-            </div>
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-header">
+    <div class="section-tag">How It Works</div>
+    <h2 class="section-title">Simple Process,<br>Outstanding Results</h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <h4>Call or Contact Us</h4>
+      <p>Reach out by phone or message. We'll schedule a convenient time to visit your property.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <h4>Free Estimate</h4>
+      <p>We assess your windows and provide a clear, honest quote with no surprises.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <h4>We Get to Work</h4>
+      <p>Our team arrives on time, works cleanly, and completes the job with care.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <h4>You're Satisfied</h4>
+      <p>We don't leave until the job is done right and you're fully happy with the results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="reviews">
+  <div class="section-header">
+    <div class="section-tag">Reviews</div>
+    <h2 class="section-title">What DFW Homeowners Say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">Salazar & Sons replaced all the windows in our home and the difference is incredible. Professional, fast, and the price was very fair. Highly recommend to anyone in Dallas.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">M</div>
+        <div>
+          <div class="author-name">Maria G.</div>
+          <div class="author-loc">Dallas, TX</div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Salazar & Sons&nbsp;<span>Window Co.</span></h3>
-                    <p>Quality window replacement and repair — built on family values, delivered with pride.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Free Estimate</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Window Repair</a></li>
-                        <li><a href="#services">Window Replacement</a></li>
-                        <li><a href="#services">Energy Efficiency</a></li>
-                        <li><a href="#services">Custom Installation</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="tel:+15551234567">(555) 123-4567</a></li>
-                        <li><a href="mailto:info@salazarandsonswindowco.com">Email Us</a></li>
-                        <li>Mon–Fri: 7AM – 6PM</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Salazar & Sons Window Co. All rights reserved. | <a href="#">Privacy Policy</a></p>
-            </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">Called them for a repair on a broken seal and they came out the next day. Honest guys, did great work, and didn't try to upsell me on anything I didn't need.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">J</div>
+        <div>
+          <div class="author-name">James R.</div>
+          <div class="author-loc">Fort Worth, TX</div>
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">Family-owned businesses are always the way to go. Brandon and his team were respectful, clean, and the windows look amazing. Will definitely use them again.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">L</div>
+        <div>
+          <div class="author-name">Linda P.</div>
+          <div class="author-loc">Irving, TX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Back to Top -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-tag">Get Started Today</div>
+  <h2 class="section-title">Ready for Better Windows?</h2>
+  <p>Call us today for a free, no-obligation estimate. Serving all of Dallas-Fort Worth.</p>
+  <div class="cta-buttons">
+    <a href="tel:4699949236" class="btn-primary">Call (469) 994-9236</a>
+    <a href="mailto:salazarbrandon1257@gmail.com" class="btn-secondary">Send a Message</a>
+  </div>
+  <br>
+  <a href="tel:4699949236" class="phone-link">
+    <span class="phone-icon">📞</span> (469) 994-9236
+  </a>
+</section>
 
-    <script src="script.js"></script>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Salazar <span>&</span> Sons Window Co.</div>
+  <div class="footer-info">
+    📍 Dallas, TX — Serving all of DFW<br>
+    📞 <a href="tel:4699949236">(469) 994-9236</a> &nbsp;|&nbsp;
+    ✉️ <a href="mailto:salazarbrandon1257@gmail.com">salazarbrandon1257@gmail.com</a>
+  </div>
+  <div class="footer-copy">© 2026 Salazar & Sons Window Co. All rights reserved.</div>
+</footer>
+
 </body>
 </html>
