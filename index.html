@@ -514,6 +514,100 @@ footer {
 
   text-align: center;
 }
+/* Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Modal Box */
+.modal-content {
+  background: #0a1628;
+  width: 100%;
+  max-width: 550px;
+  padding: 3rem;
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 10px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  color: #c9a84c;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.modal-content p {
+  color: #8892a4;
+  margin-bottom: 2rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Form Styling */
+.estimate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.estimate-form input,
+.estimate-form textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: white;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.estimate-form input:focus,
+.estimate-form textarea:focus {
+  border-color: #c9a84c;
+}
+
+.submit-btn {
+  background: #c9a84c;
+  color: #0a1628;
+  border: none;
+  padding: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #e8c870;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   
   .footer-logo {
     font-family: 'Playfair Display', serif;
@@ -569,7 +663,9 @@ footer {
     <li><a href="#process">Process</a></li>
     <li><a href="#reviews">Reviews</a></li>
   </ul>
-  <a href="tel:4699093185" class="nav-cta">Free Estimate</a>
+  <button class="nav-cta" onclick="openEstimateModal()">
+  Free Estimate
+</button>
 </nav>
 
 <!-- HERO -->
@@ -837,7 +933,9 @@ footer {
   <p>Call us today for a free, no-obligation estimate. Serving all of Dallas-Fort Worth.</p>
   <div class="cta-buttons">
     <a href="tel:4699093185" class="btn-primary">Call (469) 909-3185</a>
-    <a href="mailto:salazarwindowco@gmail.com" class="btn-secondary">Send a Message</a>
+  <button class="nav-cta" onclick="openEstimateModal()">
+  Free Estimate
+</button>
   </div>
   <br>
   <a href="tel:4699093185" class="phone-link">
@@ -855,6 +953,51 @@ footer {
   </div>
   <div class="footer-copy">© 2026 Salazar & Sons Window Co. All rights reserved.</div>
 </footer>
+<!-- Estimate Popup Modal -->
+<div id="estimateModal" class="modal">
+  <div class="modal-content">
+    
+    <span class="close-btn" onclick="closeEstimateModal()">&times;</span>
 
+    <h2>Free Estimate</h2>
+    <p>Fill out the form below and we’ll contact you shortly.</p>
+
+    <form action="https://formsubmit.co/salazarwindowco@gmail.com" method="POST" class="estimate-form">
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Free Estimate Request">
+
+      <input type="text" name="name" placeholder="Full Name" required>
+
+      <input type="email" name="email" placeholder="Email Address" required>
+
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+
+      <textarea name="message" rows="5" placeholder="Tell us about your project"></textarea>
+
+      <button type="submit" class="submit-btn">
+        Submit Request
+      </button>
+    </form>
+
+  </div>
+</div>
+<script>
+  function openEstimateModal() {
+    document.getElementById('estimateModal').style.display = 'flex';
+  }
+
+  function closeEstimateModal() {
+    document.getElementById('estimateModal').style.display = 'none';
+  }
+
+  // Close when clicking outside modal
+  window.onclick = function(event) {
+    const modal = document.getElementById('estimateModal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  }
+</script>
 </body>
 </html>
