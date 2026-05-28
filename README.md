@@ -48,7 +48,7 @@ Salazar & Sons Window Co. provides window installation, replacement, and repair 
 | Interactivity  | Vanilla JavaScript |
 | Analytics      | Google Analytics (gtag.js) |
 | Fonts          | Google Fonts      |
-| Hosting        | GitHub Pages      |
+| Hosting        | Netlify           |
 
 No build tools, package managers, or external CSS/JS frameworks are required.
 
