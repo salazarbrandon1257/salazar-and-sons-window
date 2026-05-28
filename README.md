@@ -60,7 +60,7 @@ No build tools, package managers, or external CSS/JS frameworks are required.
 ├── index.html          # Main (and only) HTML page — contains all sections
 ├── style.css           # Complete stylesheet (~24KB)
 ├── script.js           # Navigation toggle, modal, scroll behavior (~6KB)
-├── CNAME               # Custom domain config (salazarandsonswindow.com)
+├── CNAME               # Custom domain reference (salazarandsonswindow.com)
 ├── LICENSE             # MIT License
 ├── images/
 │   ├── aboutMe.png     # About section photo
@@ -93,12 +93,10 @@ Then visit `http://localhost:8000` in your browser.
 
 ## Deployment
 
-The site is deployed on **GitHub Pages** with a custom domain configured via the `CNAME` file.
+The site is deployed on **Netlify** with a custom domain (`salazarandsonswindow.com`).
 
-To deploy updates:
-
-1. Commit and push changes to the `main` branch
-2. GitHub Pages automatically serves the updated files at [salazarandsonswindow.com](https://salazarandsonswindow.com)
+To deploy updates, simply commit and push to the connected branch — Netlify automatically
+builds and publishes the latest version.
 
 ---
 
