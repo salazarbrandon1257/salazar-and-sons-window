@@ -11,70 +11,28 @@
   gtag('config', 'G-TEPP27488B');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salazar & Sons Window Co. | Dallas-Fort Worth</title>
-<link rel="canonical" href="https://www.salazarandsonswindow.com/">
-<meta name="description" content="Salazar &amp; Sons Window Co. offers professional window installation, replacement, and repair across Dallas-Fort Worth. Family-owned, licensed &amp; insured. Free estimates.">
+<title>Portfolio | Salazar & Sons Window Co.</title>
+<link rel="canonical" href="https://www.salazarandsonswindow.com/portfolio.html">
+<meta name="description" content="Browse recent window installation, replacement, and repair projects by Salazar &amp; Sons Window Co. across the Dallas-Fort Worth area.">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.salazarandsonswindow.com/">
-<meta property="og:title" content="Salazar &amp; Sons Window Co. | Window Installation &amp; Replacement — Dallas-Fort Worth">
-<meta property="og:description" content="Family-owned window installation, replacement, and repair across the DFW area. Licensed &amp; insured. Free in-home estimates.">
+<meta property="og:url" content="https://www.salazarandsonswindow.com/portfolio.html">
+<meta property="og:title" content="Portfolio | Salazar &amp; Sons Window Co.">
+<meta property="og:description" content="Recent window installation and replacement projects across the Dallas-Fort Worth area.">
 <meta property="og:image" content="https://www.salazarandsonswindow.com/images/og-image.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Salazar &amp; Sons Window Co. | Dallas-Fort Worth">
+<meta name="twitter:title" content="Portfolio | Salazar &amp; Sons Window Co.">
 <meta name="twitter:description" content="Professional window installation, replacement &amp; repair across DFW. Free estimates. Licensed &amp; insured.">
 
 <!-- Favicon (moved from body) -->
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
-<!-- Local Business Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Salazar & Sons Window Co.",
-  "description": "Family-owned window installation, replacement, and repair company serving the Dallas-Fort Worth area. Licensed and insured with free in-home estimates.",
-  "url": "https://www.salazarandsonswindow.com",
-  "telephone": "+1-469-909-3185",
-  "email": "info@salazarandsonswindow.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Dallas",
-    "addressRegion": "TX",
-    "addressCountry": "US"
-  },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 32.7767,
-      "longitude": -96.7970
-    },
-    "geoRadius": "80000"
-  },
-  "serviceArea": {
-    "@type": "AdministrativeArea",
-    "name": "Dallas-Fort Worth Metroplex"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Window Services",
-    "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Window Installation"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Window Replacement"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Window Repair"}}
-    ]
-  },
-  "priceRange": "$$",
-  "openingHours": "Mo-Fr 08:00-18:00",
-  "sameAs": []
-}
-</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -431,6 +389,71 @@
   .process-step h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.7rem; }
   .process-step p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
 
+  /* ── PORTFOLIO ── */
+  .portfolio {
+    padding: 7rem 4rem;
+    background: var(--cream);
+  }
+  .portfolio .section-title { color: var(--navy); }
+  .portfolio .section-sub { color: #556; }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+  .portfolio-item {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--steel-light);
+    box-shadow: 0 4px 16px rgba(16,33,61,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .portfolio-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(16,33,61,0.18);
+  }
+  .portfolio-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+  }
+  .portfolio-item:hover img { transform: scale(1.06); }
+  .portfolio-overlay {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end;
+    padding: 1.25rem;
+    background: linear-gradient(180deg, transparent 40%, rgba(16,33,61,0.85) 100%);
+    color: var(--white);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+  .portfolio-overlay span { font-weight: 600; font-size: 1rem; }
+  .portfolio-overlay small { color: var(--steel-light); font-size: 0.8rem; margin-top: 0.2rem; }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0; z-index: 10000;
+    background: rgba(5,12,24,0.9);
+    align-items: center; justify-content: center;
+    padding: 2rem;
+  }
+  .lightbox.show { display: flex; }
+  .lightbox-content { max-width: 900px; width: 100%; text-align: center; }
+  .lightbox-content img { width: 100%; max-height: 75vh; object-fit: contain; border-radius: 6px; }
+  .lightbox-caption { color: var(--white); margin-top: 1rem; font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+  .lightbox-close {
+    position: absolute; top: 20px; right: 30px;
+    color: var(--white); font-size: 2.2rem; line-height: 1;
+    cursor: pointer; opacity: 0.8; background: none; border: 0;
+  }
+  .lightbox-close:hover { opacity: 1; }
+
   /* ── TESTIMONIALS ── */
   .testimonials {
     padding: 7rem 4rem;
@@ -745,6 +768,8 @@ footer {
     .why-visual { display: none; }
     .process { padding: 4rem 1.5rem; }
     .process-steps { grid-template-columns: 1fr 1fr; }
+    .portfolio { padding: 4rem 1.5rem; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
     .testimonials { padding: 4rem 1.5rem; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .cta-section { padding: 4rem 1.5rem; }
@@ -826,19 +851,18 @@ footer {
 @keyframes promoPop { from { opacity:0; transform:translateY(18px) scale(.97); } to { opacity:1; transform:translateY(0) scale(1); } }
 @media (max-width:600px) { .promo-content { padding:2.75rem 1.5rem 2rem; } }
 </style>
-</head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <img src="images/salazar-sons-logo.png" loading="eager" alt="Salazar & Sons Window Co." class="nav-logo-img">
+  <a href="index.html"><img src="images/salazar-sons-logo.png" loading="eager" alt="Salazar & Sons Window Co." class="nav-logo-img"></a>
     <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#why">Why Us</a></li>
-    <li><a href="#process">Process</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="index.html#process">Process</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
     <li><a href="about.html">About Us</a></li>
-    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="index.html#reviews">Reviews</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem;">
     <a href="tel:4699093185" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--navy);text-decoration:none;font-weight:600;font-size:0.95rem;letter-spacing:0.02em;transition:color 0.3s;" onmouseover="this.style.color='var(--steel)'" onmouseout="this.style.color='var(--navy)'">
@@ -851,353 +875,60 @@ footer {
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-bg-photo"></div>
-  <div class="hero-content">
-  <div class="hero-brand-lockup">
-    <img src="images/salazar-sons-logo.png" loading="eager" alt="Salazar & Sons Window Co." class="hero-logo">
-    <h1>Window Installation <em>Done Right.</em></h1>
-  </div>
-    <p>Family-owned and operated in Dallas, TX. We install, replace, and repair windows with craftsmanship you can see and quality that lasts.</p>
-    <div class="hero-buttons">
-      <a href="tel:4699093185" class="btn-primary">Call for Free Estimate</a>
-      <a href="#services" class="btn-secondary">Our Services</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="window-showcase">
-      <div class="window-frame-large">
-        <div class="window-pane"><div class="window-reflection"></div></div>
-        <div class="window-pane"><div class="window-reflection"></div></div>
-        <div class="window-pane"><div class="window-reflection"></div></div>
-        <div class="window-pane"><div class="window-reflection"></div></div>
-      </div>
-      <div class="badge-float">
-        <span class="num">DFW</span>
-        <span class="txt">Local & Trusted</span>
-      </div>
-    </div>
-  </div>
+<!-- PAGE HEADER -->
+<section style="padding:8rem 4rem 3rem;text-align:center;background:linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);">
+  <div class="section-tag">Our Work</div>
+  <h1 style="font-family:'Playfair Display',serif;color:var(--white);font-size:2.75rem;margin-top:0.5rem;">Portfolio</h1>
 </section>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat">
-    <div class="stat-num">100%</div>
-    <div class="stat-label">Licensed & Insured</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">DFW</div>
-    <div class="stat-label">Wide Service Area</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">Free</div>
-    <div class="stat-label">Estimates Always</div>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section class="services" id="services">
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
   <div class="section-header">
-    <div class="section-tag">What We Do</div>
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-sub">Whether you need a brand-new installation, a full replacement, or a quick repair — we have you covered across the entire DFW area.</p>
+    <p class="section-sub">A look at some of our recent window installations and replacements across the Dallas-Fort Worth area.</p>
   </div>
-  <div class="services-grid">
-
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="5" width="50" height="50" rx="2" stroke="#6f829e" stroke-width="2.5"/>
-          <line x1="30" y1="5" x2="30" y2="55" stroke="#6f829e" stroke-width="2"/>
-          <line x1="5" y1="30" x2="55" y2="30" stroke="#6f829e" stroke-width="2"/>
-          <circle cx="30" cy="30" r="4" fill="#6f829e"/>
-        </svg>
-      </div>
-      <h3>Window Installation</h3>
-      <p>New construction or first-time installation — we handle the entire process from measurement to finishing, ensuring a perfect fit and seal every time.</p>
-      <a href="tel:4699093185" class="service-link">Get a Quote →</a>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="5" width="50" height="50" rx="2" stroke="#6f829e" stroke-width="2.5"/>
-          <line x1="30" y1="5" x2="30" y2="55" stroke="#6f829e" stroke-width="2"/>
-          <line x1="5" y1="30" x2="55" y2="30" stroke="#6f829e" stroke-width="2"/>
-          <path d="M38 18 L48 8 M48 8 L52 12 M48 8 L44 12" stroke="#6f829e" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <h3>Window Replacement</h3>
-      <p>Upgrade old, drafty, or damaged windows with modern energy-efficient options. We remove the old and install the new with minimal disruption to your home.</p>
-      <a href="tel:4699093185" class="service-link">Get a Quote →</a>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="5" width="50" height="50" rx="2" stroke="#6f829e" stroke-width="2.5"/>
-          <line x1="30" y1="5" x2="30" y2="55" stroke="#6f829e" stroke-width="2"/>
-          <line x1="5" y1="30" x2="55" y2="30" stroke="#6f829e" stroke-width="2"/>
-          <circle cx="42" cy="42" r="8" stroke="#6f829e" stroke-width="2"/>
-          <line x1="42" y1="38" x2="42" y2="46" stroke="#6f829e" stroke-width="2" stroke-linecap="round"/>
-          <line x1="38" y1="42" x2="46" y2="42" stroke="#6f829e" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <h3>Window Repair</h3>
-      <p>Broken glass, faulty hardware, failed seals, or damaged frames — we diagnose and fix window issues fast so your home stays secure and energy-efficient.</p>
-      <a href="tel:4699093185" class="service-link">Get a Quote →</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- WHY US -->
-<section class="why" id="why">
-  <div class="why-grid">
-    <div class="why-content">
-      <div class="section-tag">Why Choose Us</div>
-      <h2 class="section-title">Local Family.<br>Real Craftsmanship.</h2>
-      <p class="section-sub">When you call Salazar & Sons, you're not calling a call center. You're calling a Dallas family that stands behind every job.</p>
-      <div class="why-features">
-        <div class="why-feature">
-          <div class="why-feature-icon">✓</div>
-          <div>
-            <h4>Licensed & Insured</h4>
-            <p>Fully registered with the City of Dallas Building Inspection Division.</p>
-          </div>
-        </div>
-        <div class="why-feature">
-          <div class="why-feature-icon">★</div>
-          <div>
-            <h4>Quality Materials</h4>
-            <p>We use only trusted, energy-efficient window products built to last.</p>
-          </div>
-        </div>
-        <div class="why-feature">
-          <div class="why-feature-icon">$</div>
-          <div>
-            <h4>Honest Pricing</h4>
-            <p>Free estimates, transparent quotes — no hidden fees, ever.</p>
-          </div>
-        </div>
-        <div class="why-feature">
-          <div class="why-feature-icon">⚡</div>
-          <div>
-            <h4>Fast Turnaround</h4>
-            <p>We respect your time and work efficiently to get the job done right.</p>
-          </div>
-        </div>
+  <div class="portfolio-grid">
+    <div class="portfolio-item" onclick="openLightbox('images/portfolio-1.jpg','Window Replacement — Dallas, TX')">
+      <img src="images/portfolio-1.jpg" loading="lazy" alt="Window replacement project in Dallas, TX">
+      <div class="portfolio-overlay">
+        <span>Window Replacement</span>
+        <small>Dallas, TX</small>
       </div>
     </div>
-    <div class="why-visual">
-      <div class="why-box why-box-1">
-        <div class="big-num">DFW</div>
-        Proudly Serving Dallas-Fort Worth
-      </div>
-      <div class="why-box why-box-2">Family Owned & Operated</div>
-      <div class="why-box why-box-3">Free Estimates on Every Job</div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process" id="process">
-  <div class="section-header">
-    <div class="section-tag">How It Works</div>
-    <h2 class="section-title">Simple Process,<br>Outstanding Results</h2>
-  </div>
-  <div class="process-steps">
-    <div class="process-step">
-      <div class="step-num">1</div>
-      <h4>Call or Contact Us</h4>
-      <p>Reach out by phone or message. We'll schedule a convenient time to visit your property.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">2</div>
-      <h4>Free Estimate</h4>
-      <p>We assess your windows and provide a clear, honest quote with no surprises.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">3</div>
-      <h4>We Get to Work</h4>
-      <p>Our team arrives on time, works cleanly, and completes the job with care.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">4</div>
-      <h4>You're Satisfied</h4>
-      <p>We don't leave until the job is done right and you're fully happy with the results.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── ABOUT ME ── -->
-<!-- TESTIMONIALS -->
-<section class="testimonials" id="reviews">
-  <div class="section-header">
-    <div class="section-tag">Reviews</div>
-    <h2 class="section-title">What DFW Homeowners Say</h2>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p class="testimonial-text">We hired Salazar & Sons after couple other contractors screw us over. It was like a breathe of fresh air. They was quick to answer, great communication, did a good and quick job on our windows replacement project. It was fast and neat, left project clean. Would definetly use them again.</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">P</div>
-        <div>
-          <div class="author-name">Petr Kashaev</div>
-          <div class="author-loc">Dallas, TX</div>
-        </div>
+    <div class="portfolio-item" onclick="openLightbox('images/portfolio-2.jpg','New Construction Install — Fort Worth, TX')">
+      <img src="images/portfolio-2.jpg" loading="lazy" alt="New construction window installation in Fort Worth, TX">
+      <div class="portfolio-overlay">
+        <span>New Construction Install</span>
+        <small>Fort Worth, TX</small>
       </div>
     </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p class="testimonial-text">Amazing customer service! The installment of my new windows made my home look as if it was brand new!</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">J</div>
-        <div>
-          <div class="author-name">Azael G.</div>
-          <div class="author-loc">Dallas, TX</div>
-        </div>
+    <div class="portfolio-item" onclick="openLightbox('images/portfolio-3.jpg','Bay Window Upgrade — Irving, TX')">
+      <img src="images/portfolio-3.jpg" loading="lazy" alt="Bay window upgrade in Irving, TX">
+      <div class="portfolio-overlay">
+        <span>Bay Window Upgrade</span>
+        <small>Irving, TX</small>
       </div>
     </div>
-    <div class="testimonial-card">
-      <div class="stars">★★★★★</div>
-      <p class="testimonial-text"> I used this company to get complete window replacement done at my home and honestly can’t recommend them enough!! Not only did I get the best rate, the guys came out the very next day to get the work started. Brandon was very thorough with his work and explained everything to us prior. A1 customer service and beautiful results!!</p>
-      <div class="testimonial-author">
-        <div class="author-avatar">L</div>
-        <div>
-          <div class="author-name">Aakash M.</div>
-          <div class="author-loc">Irving, TX</div>
-        </div>
+    <div class="portfolio-item" onclick="openLightbox('images/portfolio-4.jpg','Whole-Home Replacement — Plano, TX')">
+      <img src="images/portfolio-4.jpg" loading="lazy" alt="Whole home window replacement in Plano, TX">
+      <div class="portfolio-overlay">
+        <span>Whole-Home Replacement</span>
+        <small>Plano, TX</small>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- BRANDS / PARTNERS -->
-<section class="brands">
-  <div class="section-tag">Trusted Brands</div>
-  <h2 class="brands-title">Products We Install</h2>
-  <p class="brands-sub">We work with industry-leading window manufacturers to bring you quality, efficiency, and lasting value.</p>
-  <div class="brands-grid">
-    <div class="brand-item westlake-brand" aria-label="Westlake Windows">
-      <svg class="westlake-logo" width="160" height="52" viewBox="0 55 308 95" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M38.7182 62.0542H36.9205C36.5908 62.0542 36.3003 62.263 36.1904 62.5725L24.517 97.7026L13.2282 63.7252C12.8985 62.7272 11.9565 62.0542 10.8888 62.0542H2.46545C0.785488 62.0542 -0.399909 63.671 0.126061 65.2415L12.0899 101.238C12.4196 102.236 13.3617 102.909 14.4293 102.909H24.5876C25.5532 102.909 26.4011 102.298 26.6994 101.4L39.4483 63.0444C39.6131 62.557 39.2442 62.0542 38.7182 62.0542Z" fill="#00B2E3"/>
-<path d="M57.449 62.0542H55.6513C55.3216 62.0542 55.0311 62.263 54.9212 62.5725L43.2478 97.7026L31.9591 63.7252C31.6294 62.7272 30.6873 62.0542 29.6197 62.0542H21.1963C19.5242 62.0542 18.3388 63.6633 18.8569 65.2337L30.8208 101.23C31.1505 102.228 32.0925 102.901 33.1602 102.901H43.3185C44.2841 102.901 45.1319 102.29 45.4302 101.393L58.1791 63.0444C58.344 62.557 57.975 62.0542 57.449 62.0542Z" fill="#002F87"/>
-<path d="M71.3755 72.8152C79.846 72.8152 84.5719 78.7411 84.5719 86.8023C84.5719 88.071 83.465 89.2779 82.0048 89.2779H63.847C64.3181 94.5694 68.2825 97.3312 72.7807 97.3312C75.5283 97.3312 77.8049 96.2946 79.2023 95.4359C80.6624 94.7474 81.7143 94.9175 82.4758 96.2404L83.1745 97.3931C83.8732 98.716 83.6455 99.8687 82.3581 100.619C80.4348 101.826 76.9257 103.551 72.2547 103.551C62.3869 103.551 56.2558 96.5344 56.2558 88.187C56.2558 79.1512 62.4418 72.8229 71.3833 72.8229L71.3755 72.8152ZM77.2161 84.845C77.0984 80.7603 74.5863 78.3389 71.2028 78.3389C67.4111 78.3389 64.7184 80.9305 64.0198 84.845H77.2161Z" fill="#002F87"/>
-<path d="M87.1468 97.2771L87.8455 96.2404C88.7247 95.0336 89.7138 94.9175 91.174 95.668C92.5792 96.4184 94.793 97.6794 97.831 97.6794C100.398 97.6794 101.976 96.5267 101.976 94.6855C101.976 89.9122 87.2017 91.6915 87.2017 81.619C87.2017 75.8633 92.3437 72.8152 98.5847 72.8152C102.557 72.8152 105.297 74.0839 106.875 74.9427C108.217 75.6312 108.39 76.838 107.754 78.1687L107.173 79.2053C106.474 80.5901 105.359 80.7603 103.899 80.1259C102.612 79.5534 100.689 78.687 98.2314 78.687C95.7743 78.687 94.2042 79.7236 94.2042 81.5649C94.2042 86.4 108.978 84.4969 108.978 94.5153C108.978 99.6908 104.543 103.551 97.6505 103.551C92.8618 103.551 89.5333 101.764 87.7198 100.557C86.3774 99.8068 86.2597 98.5458 87.1389 97.2771H87.1468Z" fill="#002F87"/>
-<path d="M114.309 79.7236H112.731C111.153 79.7236 110.337 78.9191 110.337 77.3099V76.3352C110.337 74.7802 111.153 73.9215 112.786 73.9215H114.482V67.9337C114.482 66.3787 115.361 65.52 116.931 65.52H119.27C120.848 65.52 121.72 66.3864 121.72 67.9337V73.9215H126.037C127.615 73.9215 128.487 74.7879 128.487 76.3352V77.3099C128.487 78.9191 127.607 79.7236 126.092 79.7236H121.712V91.1191C121.712 95.49 124.459 96.3565 126.5 96.5886C128.314 96.7588 128.95 97.339 128.95 98.9481V100.735C128.95 102.46 127.961 103.149 125.912 103.149C120.597 103.149 114.293 100.325 114.293 92.3878V79.7314L114.309 79.7236Z" fill="#002F87"/>
-<path d="M131.721 64.4137C131.721 62.8587 132.537 62 134.115 62H136.682C138.26 62 139.077 62.8665 139.077 64.4137V93.1305C139.077 96.0084 140.301 96.5267 141.416 96.6427C142.468 96.7588 143.229 97.3931 143.229 98.716V100.673C143.229 102.166 142.531 103.149 140.78 103.149C136.808 103.149 131.729 102.112 131.729 93.7107V64.4137H131.721Z" fill="#002F87"/>
-<path d="M161.984 84.729H163.208V84.0404C163.208 80.1878 160.696 78.8649 157.658 78.8649C155.146 78.8649 152.87 79.7855 151.472 80.5359C150.012 81.1703 148.905 80.9382 148.199 79.5612L147.618 78.4704C146.919 77.1475 147.147 75.9948 148.552 75.2444C150.475 74.2696 153.867 72.8307 158.302 72.8307C166.011 72.8307 170.619 77.0856 170.619 84.5124V100.449C170.619 102.058 169.803 102.863 168.17 102.863H166.184C164.606 102.863 163.789 102.058 163.789 100.449V99.2962C163.789 98.4917 163.907 98.0275 163.907 98.0275H163.789C163.789 98.0275 160.987 103.551 154.448 103.551C149.015 103.551 144.58 100.101 144.58 94.7474C144.58 86.1756 155.327 84.7367 161.984 84.7367V84.729ZM156.434 97.9656C160.579 97.9656 163.263 93.819 163.263 90.2526V89.1618H162.039C158.302 89.1618 151.935 89.7343 151.935 94.113C151.935 96.0702 153.451 97.9656 156.434 97.9656Z" fill="#002F87"/>
-<path d="M176.067 64.4137C176.067 62.8587 176.946 62 178.517 62H181.029C182.662 62 183.478 62.8665 183.478 64.4137V83.8625H187.16L193.346 75.1129C194.044 73.9602 194.924 73.5037 196.266 73.5037H199.069C201.055 73.5037 201.699 74.8266 200.584 76.3816L193.165 86.6243V86.7404L201.926 99.977C202.915 101.648 202.279 102.855 200.293 102.855H197.137C195.795 102.855 194.916 102.337 194.28 101.184L187.332 90.0205H183.478V100.433C183.478 102.043 182.662 102.847 181.029 102.847H178.517C176.939 102.847 176.067 102.043 176.067 100.433V64.4137Z" fill="#002F87"/>
-<path d="M217.862 72.8152C226.333 72.8152 231.059 78.7411 231.059 86.8023C231.059 88.071 229.952 89.2779 228.492 89.2779H210.334C210.805 94.5694 214.769 97.3312 219.268 97.3312C222.015 97.3312 224.292 96.2946 225.689 95.4359C227.149 94.7474 228.201 94.9175 228.963 96.2404L229.661 97.3931C230.36 98.716 230.132 99.8687 228.845 100.619C226.922 101.826 223.413 103.551 218.742 103.551C208.874 103.551 202.743 96.5344 202.743 88.187C202.743 79.1512 208.929 72.8229 217.87 72.8229L217.862 72.8152ZM223.703 84.845C223.585 80.7603 221.073 78.3389 217.69 78.3389C213.898 78.3389 211.205 80.9305 210.507 84.845H223.703Z" fill="#002F87"/>
-<path d="M2.3167 116.123H8.699C9.59394 116.123 10.7793 116.347 11.7763 116.873C13.6918 117.817 15.0499 119.937 15.0499 122.799C15.0499 126.056 13.1972 128.176 11.478 129.089V129.151C11.478 129.151 11.7763 129.545 12.0746 130.257L16.039 139.153H12.6006L8.80105 130.002H5.42542V139.153H2.3167V116.123ZM8.29863 127.263C10.1199 127.263 11.8391 125.669 11.8391 122.993C11.8391 121.43 11.2739 120.161 10.3476 119.542C9.78234 119.148 8.95806 118.923 8.29863 118.923H5.42542V127.263H8.29863Z" fill="#1F1646"/>
-<path d="M24.5017 122.242C28.7644 122.242 31.5748 125.894 31.5748 130.876C31.5748 135.858 28.7644 139.54 24.5017 139.54C20.239 139.54 17.3971 135.889 17.3971 130.876C17.3971 125.863 20.239 122.242 24.5017 122.242ZM24.5017 136.871C27.0138 136.871 28.4661 134.365 28.4661 130.876C28.4661 127.387 27.0138 124.911 24.5017 124.911C21.9896 124.911 20.498 127.356 20.498 130.876C20.498 134.396 21.9503 136.871 24.5017 136.871Z" fill="#1F1646"/>
-<path d="M35.2802 143.393C36.2379 143.393 37.1014 142.449 37.5646 140.855L38.0906 139.061L32.6032 122.637H35.8768L38.9541 133.359C39.1818 134.171 39.3152 135.409 39.3152 135.409H39.4173C39.4173 135.409 39.5821 134.202 39.7784 133.421L42.6202 122.637H45.831L40.1081 141.861C39.2838 144.6 37.3997 146 35.4764 146C33.8906 146 32.7995 145.157 32.7995 145.157L33.6944 142.813C33.6944 142.813 34.4559 143.401 35.2802 143.401V143.393Z" fill="#1F1646"/>
-<path d="M54.3878 128.926H55.1493V128.501C55.1493 125.7 54.0581 124.849 52.4409 124.849C51.2477 124.849 49.7954 125.368 48.8062 126.025L47.9506 123.681C49.0418 122.869 50.9886 122.25 52.7785 122.25C56.3504 122.25 58.2031 124.501 58.2031 128.733V139.161H55.4555V137.892C55.4555 137.173 55.5183 136.593 55.5183 136.593H55.4555C54.7254 137.993 53.3359 139.424 51.3262 139.424C49.081 139.424 46.9928 137.792 46.9928 134.504C46.9928 129.615 51.5225 128.934 54.3957 128.934L54.3878 128.926ZM52.0092 136.941C54.1288 136.941 55.1493 134.334 55.1493 132.377V131.139H54.4192C52.6686 131.139 49.8268 131.402 49.8268 134.303C49.8268 135.773 50.6511 136.941 52.0092 136.941Z" fill="#1F1646"/>
-<path d="M61.9634 116.123H65.0407V134.109C65.0407 136.129 65.5353 136.523 66.3988 136.523C66.5323 136.523 66.6971 136.523 66.862 136.492V139.231C66.6343 139.262 66.2967 139.293 65.8728 139.293C64.185 139.293 61.9712 138.805 61.9712 134.605V116.131L61.9634 116.123Z" fill="#1F1646"/>
-<path d="M73.9979 116.123H77.0752L80.0191 132.964C80.1839 134.04 80.286 135.51 80.286 135.51H80.3881C80.3881 135.51 80.5215 134.079 80.7178 132.964L84.0227 116.123H87.1001L90.1774 132.964C90.3422 134.071 90.4443 135.51 90.4443 135.51H90.5464C90.5464 135.51 90.6798 134.04 90.8761 132.964L93.7885 116.123H96.8266L92.4618 139.153H88.8271L86.0167 124.3C85.7498 122.83 85.585 121.074 85.585 121.074H85.5222C85.5222 121.074 85.3259 122.799 85.059 124.3L82.0523 139.153H78.3862L74.0215 116.123H73.9979Z" fill="#1F1646"/>
-<path d="M99.3544 116.123H102.495V119.38H99.3544V116.123ZM99.3858 122.637H102.463V139.153H99.3858V122.637Z" fill="#1F1646"/>
-<path d="M106.365 122.637H109.34V124.037C109.34 124.625 109.238 125.081 109.238 125.081H109.301C109.866 123.944 111.287 122.25 114.058 122.25C116.829 122.25 118.454 124.137 118.454 127.627V139.161H115.416V128.214C115.416 126.582 115.055 125.12 113.202 125.12C110.824 125.12 109.434 127.696 109.434 129.847V139.161H106.357V122.644L106.365 122.637Z" fill="#1F1646"/>
-<path d="M127.396 122.242C129.115 122.242 130.567 123.054 131.195 124.424H131.258C131.258 124.424 131.195 123.836 131.195 123.217V116.115H134.273V139.146H131.36V137.908C131.36 137.258 131.423 136.732 131.423 136.732H131.36C130.764 138.264 129.413 139.533 127.129 139.533C123.423 139.533 121.508 136.013 121.508 130.868C121.508 125.723 123.588 122.234 127.396 122.234V122.242ZM127.922 136.902C129.908 136.902 131.297 135.076 131.297 130.938C131.297 127.874 130.442 124.942 127.992 124.942C125.779 124.942 124.617 127.124 124.617 130.907C124.617 134.69 125.645 136.902 127.922 136.902Z" fill="#1F1646"/>
-<path d="M144.454 122.242C148.717 122.242 151.528 125.894 151.528 130.876C151.528 135.858 148.717 139.54 144.454 139.54C140.192 139.54 137.35 135.889 137.35 130.876C137.35 125.863 140.192 122.242 144.454 122.242ZM144.454 136.871C146.967 136.871 148.419 134.365 148.419 130.876C148.419 127.387 146.967 124.911 144.454 124.911C141.942 124.911 140.451 127.356 140.451 130.876C140.451 134.396 141.903 136.871 144.454 136.871Z" fill="#1F1646"/>
-<path d="M155.971 122.637L158.318 134.171C158.483 134.984 158.616 135.927 158.616 135.927H158.679C158.679 135.927 158.813 134.883 158.978 134.171L161.49 122.706H164.496L167.04 134.171C167.205 134.891 167.267 135.927 167.267 135.927H167.37C167.37 135.927 167.503 135.015 167.668 134.171L170.046 122.637H173.022L169.191 139.153H165.721L163.311 128.563C163.146 127.75 163.044 126.768 163.044 126.768H162.942C162.942 126.768 162.848 127.781 162.675 128.563L160.296 139.153H156.756L152.917 122.637H155.971Z" fill="#1F1646"/>
-<path d="M181.885 134.721C182.945 135.827 184.467 136.678 186.085 136.678C188.134 136.678 189.452 135.309 189.452 133.258C189.452 128.408 180.919 128.733 180.919 122.018C180.919 118.529 183.329 115.728 187.529 115.728C189.248 115.728 190.999 116.216 192.42 117.198L191.297 119.968C190.442 119.248 188.817 118.629 187.561 118.629C185.245 118.629 184.059 120.192 184.059 122.018C184.059 126.776 192.624 126.257 192.624 133.096C192.624 136.678 190.34 139.548 186.179 139.548C184.099 139.548 182.01 138.798 180.393 137.397L181.877 134.728L181.885 134.721Z" fill="#1F1646"/>
-<path d="M201.989 122.242C206.252 122.242 209.063 125.894 209.063 130.876C209.063 135.858 206.252 139.54 201.989 139.54C197.727 139.54 194.885 135.889 194.885 130.876C194.885 125.863 197.727 122.242 201.989 122.242ZM201.989 136.871C204.501 136.871 205.954 134.365 205.954 130.876C205.954 127.387 204.501 124.911 201.989 124.911C199.477 124.911 197.986 127.356 197.986 130.876C197.986 134.396 199.438 136.871 201.989 136.871Z" fill="#1F1646"/>
-<path d="M212.14 116.123H215.217V134.109C215.217 136.129 215.712 136.523 216.575 136.523C216.709 136.523 216.874 136.523 217.038 136.492V139.231C216.811 139.262 216.481 139.293 216.049 139.293C214.361 139.293 212.148 138.805 212.148 134.605V116.131L212.14 116.123Z" fill="#1F1646"/>
-<path d="M219.582 122.637H222.659V133.614C222.659 135.208 223.02 136.678 224.873 136.678C227.087 136.678 228.539 134.171 228.539 131.99V122.637H231.585V139.153H228.641V137.784C228.641 137.196 228.704 136.74 228.704 136.74H228.641C228.076 137.815 226.726 139.54 224.01 139.54C221.066 139.54 219.582 137.653 219.582 134.164V122.629V122.637Z" fill="#1F1646"/>
-<path d="M235.942 125.375H234.254V122.838H236.036V118.111H239.011V122.838H241.987V125.375H239.011V132.802C239.011 136.059 240.464 136.515 241.626 136.515C241.759 136.515 242.018 136.515 242.222 136.454V139.223C242.089 139.254 241.594 139.285 241.233 139.285C239.443 139.285 235.942 138.635 235.942 133.127V125.375Z" fill="#1F1646"/>
-<path d="M244.836 116.123H247.977V119.38H244.836V116.123ZM244.868 122.637H247.945V139.153H244.868V122.637Z" fill="#1F1646"/>
-<path d="M258.127 122.242C262.39 122.242 265.2 125.894 265.2 130.876C265.2 135.858 262.39 139.54 258.127 139.54C253.864 139.54 251.022 135.889 251.022 130.876C251.022 125.863 253.864 122.242 258.127 122.242ZM258.127 136.871C260.639 136.871 262.091 134.365 262.091 130.876C262.091 127.387 260.639 124.911 258.127 124.911C255.615 124.911 254.123 127.356 254.123 130.876C254.123 134.396 255.576 136.871 258.127 136.871Z" fill="#1F1646"/>
-<path d="M268.277 122.637H271.253V124.037C271.253 124.625 271.151 125.081 271.151 125.081H271.213C271.779 123.944 273.2 122.25 275.971 122.25C278.742 122.25 280.367 124.137 280.367 127.627V139.161H277.329V128.214C277.329 126.582 276.968 125.12 275.115 125.12C272.736 125.12 271.347 127.696 271.347 129.847V139.161H268.27V122.644L268.277 122.637Z" fill="#1F1646"/>
-<path d="M284.253 135.44C284.983 136.028 286.302 136.941 287.754 136.941C289.112 136.941 290.07 136.129 290.07 134.821C290.07 131.464 283.625 132.183 283.625 126.969C283.625 124.099 285.611 122.242 288.72 122.242C290.109 122.242 291.53 122.637 292.653 123.48L291.664 125.925C290.902 125.368 289.811 124.88 288.751 124.88C287.526 124.88 286.569 125.6 286.569 126.899C286.569 130.226 292.982 129.475 292.982 134.651C292.982 137.32 291.295 139.54 287.856 139.54C286.035 139.54 284.355 138.89 283.06 137.745L284.253 135.432V135.44Z" fill="#1F1646"/>
-<path d="M295.031 116.146V114.87H300.833V116.146H298.619V123.248H297.253V116.146H295.031ZM301.696 114.87H303.141L304.397 119.109C304.491 119.449 304.569 119.999 304.569 119.999H304.624C304.624 119.999 304.703 119.449 304.797 119.109L306.069 114.87H307.498L308 123.248H306.65L306.383 118.289C306.383 118.003 306.438 117.337 306.438 117.337H306.359L305.127 121.708H304.067L302.835 117.337H302.78C302.78 117.337 302.819 118.003 302.819 118.289L302.552 123.248H301.186L301.704 114.87H301.696Z" fill="#1F1646"/>
-</svg>
-
+    <div class="portfolio-item" onclick="openLightbox('images/portfolio-5.jpg','Storm Window Repair — Arlington, TX')">
+      <img src="images/portfolio-5.jpg" loading="lazy" alt="Storm window repair in Arlington, TX">
+      <div class="portfolio-overlay">
+        <span>Storm Window Repair</span>
+        <small>Arlington, TX</small>
+      </div>
     </div>
-    <div class="brand-item">
-      <img src="data:image/png;base64,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" loading="lazy" alt="Ply Gem Windows">
+    <div class="portfolio-item" onclick="openLightbox('images/portfolio-6.jpg','Picture Window Install — Frisco, TX')">
+      <img src="images/portfolio-6.jpg" loading="lazy" alt="Picture window installation in Frisco, TX">
+      <div class="portfolio-overlay">
+        <span>Picture Window Install</span>
+        <small>Frisco, TX</small>
+      </div>
     </div>
-    <div class="brand-item">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/7QEYUGhvdG9zaG9wIDMuMAA4QklNBAQAAAAAAPwcAVoAAxslRxwCeAAISkVMRC1XRU4cAloACUNIQVJMT1RURRwCdAABABwCZQABABwCUAAISGFuZC1vdXQcAl8AAk5DHAIZAAEAHAJpAA1KRUxELVdFTiBMb2dvHAIFAA1KRUxELVdFTiBMb2dvHAI3AAoyMDIyOjA2OjIxHAJzAAhKRUxELVdFThwCbgAISkVMRC1XRU4cAmcAAQAcAnoAAkNOHAIoAAxTZWUgUmVsZWFzZSAcAhQAO1BSTkFyY2hpdmVfMVllYXJ8V2Vic2l0ZURpc3RyaWJ1dGlvbnxFbnRlcm1lZGlhRGlzdHJpYnV0aW9uHAIPAAEAAAD/4gIcSUNDX1BST0ZJTEUAAQEAAAIMbGNtcwIQAABtbnRyUkdCIFhZWiAH3AABABkAAwApADlhY3NwQVBQTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAAF5jcHJ0AAABXAAAAAt3dHB0AAABaAAAABRia3B0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFlaAAABuAAAABRyVFJDAAABzAAAAEBnVFJDAAABzAAAAEBiVFJDAAABzAAAAEBkZXNjAAAAAAAAAANjMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAEZCAABYWVogAAAAAAAA9tYAAQAAAADTLVhZWiAAAAAAAAADFgAAAzMAAAKkWFlaIAAAAAAAAG+iAAA49QAAA5BYWVogAAAAAAAAYpkAALeFAAAY2lhZWiAAAAAAAAAkoAAAD4QAALbPY3VydgAAAAAAAAAaAAAAywHJA2MFkghrC/YQPxVRGzQh8SmQMhg7kkYFUXdd7WtwegWJsZp8rGm/fdPD6TD////bAEMABAIDAwMCBAMDAwQEBAQFCQYFBQUFCwgIBgkNCw0NDQsMDA4QFBEODxMPDAwSGBITFRYXFxcOERkbGRYaFBYXFv/bAEMBBAQEBQUFCgYGChYPDA8WFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFv/AABEIAI0BkAMBEQACEQEDEQH/xAAdAAEAAgMAAwEAAAAAAAAAAAAABwgBBgkCBAUD/8QAWhAAAQMDAgMDBQkKCAcRAAAAAQACAwQFBgcRCBIhEzFBCVFhcZEUIiMyOFJ1gdIVGEJTcnaVsrO0FiQ3YnSCobEXJjVng5PTJygpMzQ5Q0RWZGVmhZKiwvD/xAAaAQEAAwEBAQAAAAAAAAAAAAAABAUGAwIB/8QAOxEBAAIBAgIHBwIFAwMFAAAAAAECAwQRBTESEyFBYXGRFTIzNFGBwaHwFCI1seEGI1IkJVNiY6LR8f/aAAwDAQACEQMRAD8Av8gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD5uX3qnx3GK++1dPV1EFvp3TyRUkJlmeGjchjB1c7zAL1Ws2tFYeb2itZtKCa7jN0moqg09bb8sppgNzHPaOzcPqc4FT44Znnlsr7cUwV57+j8TxsaN7b9jkv6NH209l5/D1PauD6T6N60V18w/VC/OteN2vI2FtM6o91VtrdFTloI6CTcjc79B4rhn0l8Mb2mHfDrKZp2rEtMufGbpJQXGahq6TJ4p4HlkjH2vlIIO3cXbrtHDc0xvGzjPE8FZ2mJfgeNnRsd8WSfo0fbX32Xn8PV59q6fx9GPv29GfxeR/o5v209l6jw9X32rp/H0BxtaNHoIskJ9FtB/+6ey8/g+e1tP4+iX9FdSsc1Rwj+FWM+6xQ+6ZKYiqiEcgezbf3u56dRsomfBfDfo25pmDUUzU6deSK7txi6W2ufs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StHpv4i8xM7RCHrNV/D44tEbzL7XC/qezVzSaky77m/c6d00tNVUwk7RrJY3bEtd0JaehG436rzqsE4Ms03e9LqOvxRfZHflOaqKDhgnge9ofV3iijjaXbElshedvqaVI4ZG+o38JR+KW20+31lVDyf9gqr7xT47LTscYrP21xqHhpIYxkbmDfzbukaArXiF4rprb9+yn4bSbaivhu6a8o5diN+izTUscjPmN9iPmzPI35o9iPrHIz5jfYgcjPmt9iDIa0dzQPqQY7NnzG+xA5GfNHsXzYORnzW+xfQ5GfNb7EAxsP4DfYgzyt8Wg+tHzZjkZ80exH3Y5GfNHsTYZDWg7gAepA5W+I39aAAB3IMoCAgIPRgs1ohvk96htVFHcqqJsM9aynYJ5o2/FY6QDmc0eAJ2C+9Kdtt3no13327XvDovj09K+Wi03mkbSXi2UdwgbKyZsVXA2VgkYeZjw1wI5mkAg94K+xaY5S82rFuyYe5sN918emUGCxpO5aD9SGzHIz5o9ibByM+aPYgzyM+aPYgxyM+Y32IHI3bYtG3qQ2Ozj225G+xHzaGWta34rQPUEfWUGCAT3IPRp7HZae/VF7gtFDFc6uJsVRXMpmNnmY34rXyAczgNhsCdgvs2mY237Hno13327X527Hcft92qLpQWO3UtdV/8oqoKVjJZvH3zwN3fWV9m1rV6Mz2PkY6RPSiO19IAAdF5e2UBAQEBAQEEe8Sullu1c0uqcVrZzSVAkbU2+sDOb3NUNBDXEeLSCWuHiCV302ecGTpx90bVaeNRj6M/ZVDSV3ETw0V1wsn+DufJbFWz9sW0gfPD2m3L2kUke7mEgDdrm+A7irbN/C6vt6e0x9lRh/i9JvHQ3iXoazffDcSV7ttB/g3rrLaLfIXQU88boIGSEbOllll2Lncu4AA6DfYHcr1h/hdJWZ6e8z93nN/F6y0R0NohZzhC0Jt+jGKTieojuOQ3QNNxrmN2Y1rfiwxb9QwEk7nYuPUgbACr1mrnUW7PdhaaLRxp69vvTzTIoicICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgHuQeJagBvn6r4PIdy+ggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIP//Z" loading="lazy" alt="Jeld-Wen Windows">
-    </div>
-    <div class="brand-item">
-      <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" id="Layer_1" viewBox="0 0 1316.94 192.4">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #fff;
-      }
-
-      .cls-2 {
-        fill: #f26924;
-      }
-
-      .cls-3 {
-        fill: #001722;
-      }
-    </style>
-  </defs>
-  <polygon class="cls-2" points="0 192.26 0 0 192.26 0 0 192.26"/>
-  <polygon class="cls-2" points="384.51 192.26 384.51 0 192.26 0 384.51 192.26"/>
-  <polygon class="cls-1" points="192.26 0 192.26 192.26 384.51 192.26 192.26 0"/>
-  <polygon class="cls-3" points="192.26 0 192.26 192.26 0 192.26 192.26 0"/>
-  <g>
-    <g>
-      <polygon class="cls-3" points="417.87 154.83 428.78 191.38 438.47 191.38 445.65 170.2 452.82 191.38 462.51 191.38 473.42 154.83 463.48 154.83 457.18 178.44 449.43 154.83 441.86 154.83 434.11 178.44 427.81 154.83 417.87 154.83"/>
-      <rect class="cls-3" height="36.55" width="9.5" x="500.51" y="154.83"/>
-      <polygon class="cls-3" points="552.38 191.38 552.38 169.04 569.93 191.38 579.38 191.38 579.38 154.83 569.93 154.83 569.93 177.18 552.38 154.83 542.88 154.83 542.88 191.38 552.38 191.38"/>
-      <path class="cls-3" d="M642.88,166.15c-.94-2.21-2.22-4.15-3.86-5.82s-3.54-2.99-5.72-4c-2.18-1-4.51-1.5-7.01-1.5h-14.06v36.55h14.06c2.52,0,4.87-.5,7.05-1.5,2.18-1,4.09-2.34,5.72-4.03s2.91-3.63,3.83-5.84c.92-2.21,1.38-4.51,1.38-6.91,0-2.42-.47-4.74-1.4-6.95Zm-9.24,11.04c-.47,1.24-1.15,2.32-2.03,3.22-.89,.9-1.98,1.62-3.27,2.13-1.29,.52-2.76,.78-4.41,.78h-2.18v-20.45h2.18c1.62,0,3.07,.26,4.36,.78,1.29,.52,2.38,1.23,3.27,2.13s1.57,1.99,2.06,3.25,.73,2.62,.73,4.07-.24,2.85-.71,4.1Z"/>
-      <path class="cls-3" d="M712.87,165.52c-1-2.34-2.4-4.39-4.19-6.13-1.79-1.74-3.93-3.11-6.42-4.1-2.49-.99-5.2-1.48-8.14-1.48s-5.69,.49-8.16,1.48c-2.47,.99-4.6,2.35-6.38,4.1-1.78,1.74-3.16,3.79-4.17,6.13-1,2.34-1.5,4.87-1.5,7.58s.5,5.25,1.5,7.58c1,2.34,2.39,4.39,4.17,6.13,1.78,1.74,3.9,3.11,6.38,4.1,2.47,.98,5.19,1.48,8.16,1.48s5.66-.49,8.14-1.48c2.49-.99,4.63-2.35,6.42-4.1,1.79-1.74,3.19-3.79,4.19-6.13s1.5-4.87,1.5-7.58-.5-5.24-1.5-7.58Zm-9.26,11.61c-.55,1.23-1.3,2.3-2.25,3.2s-2.06,1.61-3.3,2.1c-1.24,.5-2.56,.75-3.95,.75s-2.71-.25-3.95-.75c-1.24-.5-2.34-1.2-3.27-2.1s-1.68-1.97-2.23-3.2c-.55-1.23-.83-2.57-.83-4.03s.28-2.8,.83-4.03c.55-1.23,1.29-2.3,2.23-3.2,.94-.9,2.03-1.61,3.27-2.11s2.56-.75,3.95-.75,2.7,.25,3.95,.75c1.24,.5,2.34,1.21,3.3,2.11s1.7,1.97,2.25,3.2,.83,2.57,.83,4.03-.28,2.8-.83,4.03Z"/>
-      <polygon class="cls-3" points="741.19 154.83 752.09 191.38 761.79 191.38 768.95 170.2 776.13 191.38 785.82 191.38 796.74 154.83 786.8 154.83 780.49 178.44 772.74 154.83 765.18 154.83 757.42 178.44 751.12 154.83 741.19 154.83"/>
-      <path class="cls-3" d="M848.84,156.77c-1.81-.97-3.7-1.7-5.67-2.2-1.97-.5-3.86-.75-5.67-.75-1.93,0-3.69,.29-5.26,.88-1.57,.58-2.89,1.4-3.98,2.45-1.08,1.05-1.92,2.31-2.52,3.78s-.9,3.11-.9,4.92,.28,3.31,.85,4.48c.56,1.18,1.31,2.15,2.23,2.93,.92,.78,1.97,1.4,3.15,1.86,1.18,.47,2.38,.9,3.62,1.29,1.03,.35,1.91,.68,2.64,.97,.73,.29,1.31,.61,1.77,.95s.78,.71,.97,1.12c.2,.4,.29,.88,.29,1.43,0,.9-.38,1.72-1.14,2.42-.76,.71-1.91,1.07-3.47,1.07-1.36,0-2.73-.3-4.12-.92-1.39-.61-2.8-1.55-4.22-2.81l-4.07,7.66c3.94,2.75,8.23,4.12,12.85,4.12,2.23,0,4.22-.3,5.99-.9,1.77-.6,3.25-1.44,4.46-2.52s2.13-2.38,2.76-3.91c.63-1.52,.95-3.21,.95-5.09,0-2.78-.72-5.04-2.16-6.77-1.43-1.73-3.71-3.11-6.81-4.15-.78-.26-1.56-.5-2.35-.73-.79-.23-1.5-.49-2.13-.8-.63-.3-1.14-.67-1.53-1.09-.39-.42-.58-.95-.58-1.6,0-.94,.39-1.69,1.17-2.27s1.78-.88,3-.88c.97,0,1.97,.2,3.01,.61,1.03,.4,2.07,1.02,3.1,1.86l3.78-7.42Z"/>
-      <path class="cls-3" d="M950.73,182.71l.73-.68c.9-.84,1.7-1.64,2.4-2.4,.69-.76,1.32-1.51,1.87-2.25l-5.38-5.19c-1.23,1.65-2.81,3.4-4.75,5.24l-4.6-4.84c1.26-.64,2.32-1.29,3.18-1.91,.85-.63,1.55-1.29,2.08-1.99,.54-.69,.91-1.43,1.14-2.22,.23-.79,.34-1.67,.34-2.64,0-1.42-.28-2.74-.85-3.95-.56-1.21-1.36-2.27-2.37-3.18-1.02-.9-2.22-1.61-3.61-2.1-1.39-.5-2.91-.75-4.55-.75s-3.11,.25-4.51,.75c-1.39,.5-2.59,1.19-3.61,2.08s-1.82,1.95-2.4,3.17c-.58,1.23-.88,2.56-.88,3.98,0,2.13,.94,4.38,2.81,6.74l.63,.73-1.02,.48c-1.19,.55-2.2,1.09-3.03,1.62-.83,.54-1.57,1.17-2.25,1.91-.9,.97-1.54,1.98-1.91,3.03-.37,1.05-.56,2.25-.56,3.61,0,1.52,.29,2.92,.88,4.19,.58,1.28,1.39,2.38,2.42,3.32,1.03,.94,2.26,1.67,3.69,2.18,1.42,.52,2.99,.78,4.7,.78,4,0,8.19-1.45,12.56-4.36l3.2,3.35h11.83l-8.18-8.68Zm-17.06,1.21c-.58,0-1.12-.09-1.62-.27-.5-.18-.95-.42-1.33-.73-.39-.3-.7-.68-.93-1.12-.23-.44-.34-.91-.34-1.43,0-1.42,1.14-2.85,3.45-4.27l5.77,6.2c-1.72,1.07-3.38,1.6-5,1.6Zm3.15-15.76c-1.91-2.07-2.86-3.69-2.86-4.84,0-.88,.29-1.6,.88-2.18,.58-.58,1.31-.88,2.18-.88,.94,0,1.7,.33,2.3,1,.59,.66,.9,1.45,.9,2.35,0,1.68-1.13,3.2-3.4,4.55Z"/>
-      <path class="cls-3" d="M1060.23,166.15c-.94-2.21-2.22-4.15-3.86-5.82-1.63-1.67-3.54-2.99-5.72-4s-4.51-1.5-7.01-1.5h-14.06v36.55h14.06c2.52,0,4.87-.5,7.05-1.5s4.09-2.34,5.72-4.03c1.63-1.68,2.91-3.63,3.83-5.84,.92-2.21,1.38-4.51,1.38-6.91,0-2.42-.47-4.74-1.4-6.95Zm-9.24,11.04c-.47,1.24-1.15,2.32-2.03,3.22-.89,.9-1.98,1.62-3.27,2.13-1.29,.52-2.76,.78-4.41,.78h-2.18v-20.45h2.18c1.62,0,3.07,.26,4.36,.78,1.29,.52,2.38,1.23,3.27,2.13s1.57,1.99,2.06,3.25c.49,1.26,.73,2.62,.73,4.07,0,1.49-.24,2.85-.71,4.1Z"/>
-      <path class="cls-3" d="M1130.22,165.52c-1-2.34-2.4-4.39-4.19-6.13-1.79-1.74-3.93-3.11-6.42-4.1-2.49-.99-5.2-1.48-8.14-1.48s-5.69,.49-8.16,1.48c-2.47,.99-4.6,2.35-6.38,4.1s-3.16,3.79-4.17,6.13c-1,2.34-1.5,4.87-1.5,7.58s.5,5.25,1.5,7.58c1,2.34,2.39,4.39,4.17,6.13s3.9,3.11,6.38,4.1c2.47,.98,5.19,1.48,8.16,1.48s5.66-.49,8.14-1.48c2.49-.99,4.63-2.35,6.42-4.1,1.79-1.74,3.19-3.79,4.19-6.13,1-2.34,1.5-4.87,1.5-7.58s-.5-5.24-1.5-7.58Zm-9.26,11.61c-.55,1.23-1.3,2.3-2.25,3.2s-2.06,1.61-3.3,2.1c-1.24,.5-2.56,.75-3.95,.75s-2.71-.25-3.95-.75c-1.24-.5-2.34-1.2-3.27-2.1-.94-.9-1.68-1.97-2.23-3.2s-.83-2.57-.83-4.03,.28-2.8,.83-4.03c.55-1.23,1.29-2.3,2.23-3.2,.94-.9,2.03-1.61,3.27-2.11s2.56-.75,3.95-.75,2.7,.25,3.95,.75c1.24,.5,2.34,1.21,3.3,2.11,.95,.9,1.7,1.97,2.25,3.2,.55,1.23,.83,2.57,.83,4.03s-.28,2.8-.83,4.03Z"/>
-      <path class="cls-3" d="M1200.27,165.52c-1-2.34-2.4-4.39-4.19-6.13-1.79-1.74-3.93-3.11-6.43-4.1-2.49-.99-5.2-1.48-8.14-1.48s-5.69,.49-8.16,1.48c-2.47,.99-4.6,2.35-6.38,4.1s-3.16,3.79-4.17,6.13c-1,2.34-1.5,4.87-1.5,7.58s.5,5.25,1.5,7.58c1,2.34,2.39,4.39,4.17,6.13,1.78,1.74,3.91,3.11,6.38,4.1,2.47,.98,5.19,1.48,8.16,1.48s5.66-.49,8.14-1.48c2.49-.99,4.63-2.35,6.43-4.1,1.79-1.74,3.19-3.79,4.19-6.13,1-2.34,1.5-4.87,1.5-7.58s-.5-5.24-1.5-7.58Zm-9.26,11.61c-.55,1.23-1.3,2.3-2.25,3.2s-2.06,1.61-3.3,2.1c-1.24,.5-2.56,.75-3.95,.75s-2.7-.25-3.95-.75-2.33-1.2-3.27-2.1c-.94-.9-1.68-1.97-2.22-3.2-.55-1.23-.83-2.57-.83-4.03s.28-2.8,.83-4.03c.54-1.23,1.29-2.3,2.22-3.2,.94-.9,2.03-1.61,3.27-2.11s2.56-.75,3.95-.75,2.7,.25,3.95,.75,2.34,1.21,3.3,2.11c.95,.9,1.7,1.97,2.25,3.2,.55,1.23,.83,2.57,.83,4.03s-.28,2.8-.83,4.03Z"/>
-      <path class="cls-3" d="M1251.89,176.4c2.62-.61,4.6-1.79,5.94-3.52s2.01-3.98,2.01-6.77c0-1.55-.25-3.01-.75-4.36-.5-1.36-1.24-2.56-2.23-3.59s-2.24-1.85-3.76-2.45c-1.52-.6-3.3-.9-5.33-.9h-14.78v36.56h9.5v-14.06l9.07,14.06h11.83l-11.5-14.98Zm-3.3-6.4c-1,.78-2.44,1.17-4.31,1.17h-1.79v-9.02h1.79c1.87,0,3.31,.39,4.31,1.17,1,.78,1.5,1.89,1.5,3.35s-.5,2.56-1.5,3.34Z"/>
-      <path class="cls-3" d="M1315.44,156.77c-1.81-.97-3.7-1.7-5.67-2.2-1.97-.5-3.86-.75-5.67-.75-1.94,0-3.69,.29-5.26,.88-1.57,.58-2.89,1.4-3.98,2.45s-1.93,2.31-2.52,3.78c-.6,1.47-.9,3.11-.9,4.92s.28,3.31,.85,4.48c.56,1.18,1.31,2.15,2.23,2.93s1.97,1.4,3.15,1.86c1.18,.47,2.38,.9,3.62,1.29,1.03,.35,1.91,.68,2.64,.97,.73,.29,1.31,.61,1.77,.95,.45,.34,.78,.71,.97,1.12,.2,.4,.29,.88,.29,1.43,0,.9-.38,1.72-1.14,2.42-.76,.71-1.91,1.07-3.47,1.07-1.36,0-2.73-.3-4.12-.92-1.39-.61-2.8-1.55-4.22-2.81l-4.07,7.66c3.94,2.75,8.23,4.12,12.85,4.12,2.23,0,4.22-.3,5.99-.9,1.76-.6,3.25-1.44,4.46-2.52,1.21-1.08,2.13-2.38,2.76-3.91,.63-1.52,.95-3.21,.95-5.09,0-2.78-.72-5.04-2.15-6.77-1.44-1.73-3.71-3.11-6.81-4.15-.78-.26-1.56-.5-2.35-.73-.79-.23-1.5-.49-2.13-.8-.63-.3-1.14-.67-1.53-1.09-.39-.42-.58-.95-.58-1.6,0-.94,.39-1.69,1.17-2.27s1.78-.88,3.01-.88c.97,0,1.97,.2,3,.61,1.04,.4,2.07,1.02,3.1,1.86l3.78-7.42Z"/>
-    </g>
-    <g>
-      <path class="cls-3" d="M471.66,.19l53.87,120.4h-25.68l-7.98-17.93h-40.4l-7.98,17.93h-25.61L471.66,.19Zm10.83,81.54l-10.76-24.96-10.9,24.96s21.66,0,21.66,0Z"/>
-      <path class="cls-3" d="M623.74,67.82V2.32h23.78V123.01l-71.14-67.77V120.74h-23.71V.12l71.07,67.7Z"/>
-      <path class="cls-3" d="M714.44,2.61c18.54,0,33.04,7.36,43.11,17.34,10.54,10.59,15.81,24.51,15.81,41.76s-5.27,31.12-15.81,41.61c-11.61,11.52-25.98,17.27-43.11,17.27h-31.4V2.68h31.4v-.08Zm-.07,23.5h-7.68V96.95h7.91c21.27,0,35.13-14.12,35.13-35.42,0-21.11-14.11-35.42-35.36-35.42Z"/>
-      <path class="cls-3" d="M875.1,2.32V25.95h-47.43v23.78h35.57v23.64h-35.57v23.78h47.43v23.57h-71.14V2.32h71.14Z"/>
-      <path class="cls-3" d="M905.37,2.61h38.5c13.14,0,23.76,4.96,30.88,12.01,7.18,7.18,11.42,13.74,11.42,26.79v3.07c0,7.95-2.49,15.44-7.46,22.46-4.15,5.8-7.42,8.27-14.12,10.9l27.44,42.75h-28.98l-33.88-52.19v52.19h-23.71l-.08-117.98Zm56.36,39.53c0-4.29-1.56-8.08-4.68-11.35-3.08-2.99-8.92-4.68-14.64-4.68h-13.32V58.67h9.15v.07h7.91c8.64,0,15.59-7.61,15.59-16.61Z"/>
-      <path class="cls-3" d="M1051.89,97.36c6.55,0,13.78-5.44,13.78-11.98,0-10.77-14.46-12.27-22.61-15.1-14.39-4.9-27.09-16.71-27.09-32.78,0-19.89,16.14-35.92,36.03-35.92,18.14,0,33.17,13.45,35.61,30.95l-23.54,4.97c0-6.48-5.44-11.92-11.92-11.92s-12.03,5.44-12.03,11.99c0,10.63,13.46,13.45,21.65,15.89,14.89,4.29,28.02,15.64,28.02,32.06,0,19.89-17.86,35.96-37.72,35.96-18.25,0-34.75-13.38-37.43-30.95l23.54-5.01c0,6.58,7.16,11.95,13.81,11.95l-.11-.11Z"/>
-      <path class="cls-3" d="M1191.46,2.32V25.95h-47.43v23.78h35.57v23.64h-35.57v23.78h47.43v23.57h-71.14V2.32h71.14Z"/>
-      <path class="cls-3" d="M1293.12,67.82V2.32h23.78V123.01l-71.14-67.77V120.74h-23.71V.12l71.07,67.7Z"/>
-    </g>
-  </g>
-</svg>
-    </div>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="section-tag">Get Started Today</div>
-  <h2 class="section-title">Quality Windows. Family Values.</h2>
-  <p>Call us today for a free, no-obligation estimate. Serving all of Dallas-Fort Worth.</p>
-  <div class="cta-buttons">
-    <a href="tel:4699093185" class="btn-primary">Call (469) 909-3185</a>
-  <button class="nav-cta" onclick="openEstimateModal()">
-  Free Estimate
-</button>
-  </div>
-  <br>
-  <a href="tel:4699093185" class="phone-link">
-    <span class="phone-icon">📞</span> (469) 909-3185
-  </a>
-  <div style="display:flex;flex-direction:column;align-items:center;margin-top:1rem;position:relative;z-index:1;">
-    <a href="https://www.acornfinance.com/pre-qualify/?d=D68FN&utm_medium=web_pre_qual_banner" target="_blank" rel="noopener noreferrer"><img id="acornBanner" style="margin: 10px; padding: 1px; border: 1px solid black; border-radius: 5px;" src="https://fs.acornfinance.com/banners/acorn-finance-banner-easy-payment-options-horizontal-small.png" alt="Acorn Finance apply and get affordable payment options from multiple lenders" longdesc="false"></a>
-    <a href="https://www.acornfinance.com/pre-qualify/?d=D68FN&utm_medium=web_pre_qual_banner" target="_blank" rel="noopener noreferrer" style="color:var(--steel);font-weight:600;font-size:0.85rem;text-decoration:underline;margin-top:-4px;">See if you qualify</a>
   </div>
 </section>
 
@@ -1222,18 +953,13 @@ footer {
   </div>
   <div class="footer-copy">© 2026 Salazar & Sons Window Co. All rights reserved.</div>
 </footer>
-<!-- First-Visit Promotional CTA -->
-<div id="promoModal" class="promo-modal" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
-  <div class="promo-content">
-    <button class="promo-close" onclick="closePromoModal()" aria-label="Close">&times;</button>
-    <div class="promo-badge">Limited-Time Offer</div>
-    <h2 id="promoTitle">New Windows for <span>as Low as $99/Month</span></h2>
-    <p>Upgrade your home with professionally installed windows from Salazar &amp; Sons Window Co.</p>
-    <button class="promo-cta" onclick="closePromoModal(); openEstimateModal();">Get Your Free Quote</button>
-    <div style="display:flex;justify-content:center;margin-top:0.75rem;">
-      <a href="https://www.acornfinance.com/pre-qualify/?d=D68FN&utm_medium=web_pre_qual_banner" target="_blank" rel="noopener noreferrer" style="color:var(--steel);font-weight:600;font-size:0.85rem;text-decoration:underline;">See if you qualify</a>
-    </div>
-    <p class="promo-fine-print">Monthly payment shown is subject to approved financing, terms, and eligibility. Contact us for current offer details. Final pricing depends on window size, material choice, and number of units purchased.</p>
+
+<!-- Portfolio Lightbox -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
   </div>
 </div>
 
@@ -1275,32 +1001,30 @@ footer {
     document.getElementById('estimateModal').style.display = 'none';
   }
 
-  function openPromoModal() {
-    document.getElementById('promoModal').classList.add('show');
+  function openLightbox(src, caption) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxImg').alt = caption;
+    document.getElementById('lightboxCaption').textContent = caption;
+    document.getElementById('lightbox').classList.add('show');
   }
 
-  function closePromoModal() {
-    document.getElementById('promoModal').classList.remove('show');
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('show');
   }
-
-  // Show the promotional CTA when the page is first opened.
-  window.addEventListener('load', function() {
-    setTimeout(openPromoModal, 450);
-  });
 
   // Close either modal when clicking its backdrop.
   window.onclick = function(event) {
     const estimateModal = document.getElementById('estimateModal');
-    const promoModal = document.getElementById('promoModal');
+    const lightbox = document.getElementById('lightbox');
     if (event.target === estimateModal) closeEstimateModal();
-    if (event.target === promoModal) closePromoModal();
+    if (event.target === lightbox) closeLightbox();
   }
 
   // Allow the Escape key to close either popup.
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
-      closePromoModal();
       closeEstimateModal();
+      closeLightbox();
     }
   });
 </script>
