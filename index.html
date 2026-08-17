@@ -107,7 +107,9 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-grid-bg"></div>
-  <div class="hero-bg-photo"></div>
+  <div class="hero-bg-logo">
+    <img src="images/salazar-sons-logo.png" alt="" loading="lazy">
+  </div>
   <div class="hero-content">
   <div class="hero-brand-lockup">
     <img src="images/salazar-sons-logo.png" loading="eager" alt="Salazar & Sons Window Co." class="hero-logo">
@@ -128,10 +130,37 @@
         <div class="window-pane"><div class="window-reflection"></div></div>
       </div>
       <div class="badge-float">
-        <span class="num">DFW</span>
-        <span class="txt">Local & Trusted</span>
+        <span class="num">20+</span>
+        <span class="txt">Years Serving DFW</span>
       </div>
     </div>
+  </div>
+  <div class="hero-form-container">
+    <form action="https://formsubmit.co/salazarwindowco@gmail.com" method="POST" class="hero-form">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Contact Request from Website">
+      <input type="hidden" name="_template" value="table">
+
+      <h3>Get a Free Estimate</h3>
+      <p class="form-subtext">Fill out the form and we'll contact you shortly.</p>
+
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <select name="service" required>
+        <option value="">Select a Service</option>
+        <option value="Window Installation">Window Installation</option>
+        <option value="Window Replacement">Window Replacement</option>
+        <option value="Window Repair">Window Repair</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <button type="submit" class="btn-primary form-submit">
+        Submit Request
+      </button>
+
+      <p class="form-note">By submitting, you agree to be contacted by phone, email, or text.</p>
+    </form>
   </div>
 </section>
 
