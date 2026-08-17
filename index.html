@@ -839,9 +839,15 @@ footer {
     <li><a href="#about">About Us</a></li>
     <li><a href="#reviews">Reviews</a></li>
   </ul>
-  <button class="nav-cta" onclick="openEstimateModal()">
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:4699093185" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--navy);text-decoration:none;font-weight:600;font-size:0.95rem;letter-spacing:0.02em;transition:color 0.3s;" onmouseover="this.style.color='var(--steel)'" onmouseout="this.style.color='var(--navy)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.4 21 3 13.6 3 4.5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
+      (469) 909-3185
+    </a>
+    <button class="nav-cta" onclick="openEstimateModal()">
   Free Estimate
 </button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1220,6 +1226,10 @@ footer {
   <a href="tel:4699093185" class="phone-link">
     <span class="phone-icon">📞</span> (469) 909-3185
   </a>
+  <div style="display:flex;flex-direction:column;align-items:center;margin-top:1rem;">
+<a href="https://www.acornfinance.com/pre-qualify/?d=D68FN&utm_medium=web_pre_qual_banner" target="_blank" rel="noopener noreferrer"><img id="acornBanner" style="margin: 10px; padding: 1px; border: 1px solid black; border-radius: 5px;" src="https://fs.acornfinance.com/banners/acorn-finance-banner-easy-payment-options-horizontal-small.png" alt="Acorn Finance apply and get affordable payment options from multiple lenders" longdesc="false"></a>
+    <a href="https://www.acornfinance.com/pre-qualify/?d=D68FN&utm_medium=web_pre_qual_banner" target="_blank" rel="noopener noreferrer" style="color:var(--steel);font-weight:600;font-size:0.85rem;text-decoration:underline;margin-top:-4px;">See if you qualify</a>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -1251,7 +1261,10 @@ footer {
     <h2 id="promoTitle">New Windows for <span>as Low as $99/Month</span></h2>
     <p>Upgrade your home with professionally installed windows from Salazar &amp; Sons Window Co.</p>
     <button class="promo-cta" onclick="closePromoModal(); openEstimateModal();">Get Your Free Quote</button>
-    <p class="promo-fine-print">Monthly payment shown is subject to approved financing, terms, and eligibility. Contact us for current offer details.</p>
+    <div style="display:flex;justify-content:center;margin-top:0.75rem;">
+      <a href="https://www.acornfinance.com/pre-qualify/?d=D68FN&utm_medium=web_pre_qual_banner" target="_blank" rel="noopener noreferrer" style="color:var(--steel);font-weight:600;font-size:0.85rem;text-decoration:underline;">See if you qualify</a>
+    </div>
+    <p class="promo-fine-print">Monthly payment shown is subject to approved financing, terms, and eligibility. Contact us for current offer details. Final pricing depends on window size, material choice, and number of units purchased.</p>
   </div>
 </div>
 
