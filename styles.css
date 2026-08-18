@@ -960,9 +960,7 @@ footer {
   padding: 1.25rem;
   background: linear-gradient(180deg, transparent 40%, rgba(16,33,61,0.85) 100%);
   color: var(--white);
-  opacity: 0; transition: opacity 0.3s;
 }
-.portfolio-item:hover .portfolio-overlay { opacity: 1; }
 .portfolio-overlay span { font-weight: 600; font-size: 1rem; }
 .portfolio-overlay small { color: var(--steel-light); font-size: 0.8rem; margin-top: 0.2rem; }
 
