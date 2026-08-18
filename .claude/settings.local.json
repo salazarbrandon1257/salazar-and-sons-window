@@ -9,7 +9,22 @@
       "Bash(git remote *)",
       "Bash(git push *)",
       "Bash(git pull *)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(grep -n \"hero-grid-bg\\\\|\\\\.hero-content\\\\|\\\\.hero-badge\\\\|\\\\/\\\\* ── STATS ── \\\\*\\\\/\" \"C:\\\\Users\\\\Brandon\\\\projects\\\\salazar-sons-website\\\\index.html\")",
+      "Bash(cp index.html index.html.bak)",
+      "Bash(sed -i '78,869c\\\\<link rel=\"stylesheet\" href=\"styles.css\">' index.html)",
+      "Bash(cp portfolio.html portfolio.html.bak)",
+      "Bash(sed -i '35,894c\\\\<link rel=\"stylesheet\" href=\"styles.css\">' portfolio.html)",
+      "Bash(cp about.html about.html.bak)",
+      "Bash(sed -i '35,826c\\\\<link rel=\"stylesheet\" href=\"styles.css\">' about.html)",
+      "Bash(git revert *)",
+      "Bash(python -m http.server 8000)",
+      "Bash(sed -n '/<style>/,/<\\\\/style>/p')",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost:8000/portfolio.html)",
+      "Bash(curl -s http://localhost:8000/styles.css)",
+      "Bash(curl -s http://localhost:8000/about.html)",
+      "Bash(git rm *)"
     ]
   }
 }
