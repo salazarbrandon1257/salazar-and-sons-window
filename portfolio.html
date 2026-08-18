@@ -73,46 +73,11 @@
     <p class="section-sub">A look at some of our recent window installations and replacements across the Dallas-Fort Worth area.</p>
   </div>
   <div class="portfolio-grid">
-    <div class="portfolio-item" onclick="openLightbox('portfolio/1.jpg','Premium Window Installation — Multiple Angles')">
-      <img src="portfolio/1.jpg" loading="lazy" alt="Premium window installation project with multiple angles">
+    <div class="portfolio-item" onclick="openGallery(0)">
+      <img src="portfolio/1.jpg" loading="lazy" alt="Full-home window replacement project, arched entry window">
       <div class="portfolio-overlay">
-        <span>Premium Window Installation</span>
-        <small>Multiple Angles (7 Photos)</small>
-      </div>
-    </div>
-    <div class="portfolio-item" onclick="openLightbox('portfolio/2.jpg','Window Replacement — Dallas, TX')">
-      <img src="portfolio/2.jpg" loading="lazy" alt="Window replacement project in Dallas, TX">
-      <div class="portfolio-overlay">
-        <span>Window Replacement</span>
-        <small>Dallas, TX</small>
-      </div>
-    </div>
-    <div class="portfolio-item" onclick="openLightbox('portfolio/3.jpg','New Construction Install — Fort Worth, TX')">
-      <img src="portfolio/3.jpg" loading="lazy" alt="New construction window installation in Fort Worth, TX">
-      <div class="portfolio-overlay">
-        <span>New Construction Install</span>
-        <small>Fort Worth, TX</small>
-      </div>
-    </div>
-    <div class="portfolio-item" onclick="openLightbox('portfolio/4.jpg','Bay Window Upgrade — Irving, TX')">
-      <img src="portfolio/4.jpg" loading="lazy" alt="Bay window upgrade in Irving, TX">
-      <div class="portfolio-overlay">
-        <span>Bay Window Upgrade</span>
-        <small>Irving, TX</small>
-      </div>
-    </div>
-    <div class="portfolio-item" onclick="openLightbox('portfolio/5.jpg','Whole-Home Replacement — Plano, TX')">
-      <img src="portfolio/5.jpg" loading="lazy" alt="Whole home window replacement in Plano, TX">
-      <div class="portfolio-overlay">
-        <span>Whole-Home Replacement</span>
-        <small>Plano, TX</small>
-      </div>
-    </div>
-    <div class="portfolio-item" onclick="openLightbox('portfolio/6.jpg','Storm Window Repair — Arlington, TX')">
-      <img src="portfolio/6.jpg" loading="lazy" alt="Storm window repair in Arlington, TX">
-      <div class="portfolio-overlay">
-        <span>Storm Window Repair</span>
-        <small>Arlington, TX</small>
+        <span>Full-Home Window Replacement</span>
+        <small>Dallas-Fort Worth, TX (7 Photos)</small>
       </div>
     </div>
     <div class="portfolio-item" onclick="openLightbox('portfolio/773981623_122112796635329165_803829996374782383_n.jpg','Picture Window Install — Frisco, TX')">
@@ -151,8 +116,11 @@
 <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
   <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
   <div class="lightbox-content">
+    <button id="lightboxPrev" class="lightbox-nav lightbox-prev" onclick="navGallery(-1, event)" aria-label="Previous photo">&#8249;</button>
     <img id="lightboxImg" src="" alt="">
+    <button id="lightboxNext" class="lightbox-nav lightbox-next" onclick="navGallery(1, event)" aria-label="Next photo">&#8250;</button>
     <div id="lightboxCaption" class="lightbox-caption"></div>
+    <div id="lightboxCounter" class="lightbox-counter"></div>
   </div>
 </div>
 
@@ -211,10 +179,48 @@
     document.getElementById('estimateModal').style.display = 'none';
   }
 
+  var galleryImages = [
+    { src: 'portfolio/1.jpg', caption: 'Arched entry window' },
+    { src: 'portfolio/2.jpg', caption: 'Arched double-hung window' },
+    { src: 'portfolio/3.jpg', caption: 'Argon-filled double-hung window' },
+    { src: 'portfolio/4.jpg', caption: 'Sliding window' },
+    { src: 'portfolio/5.jpg', caption: 'Black-frame sliding windows' },
+    { src: 'portfolio/6.jpg', caption: 'Home exterior, finished install' },
+    { src: 'portfolio/773981623_122112796635329165_803829996374782383_n.jpg', caption: 'Additional installation detail' }
+  ];
+  var galleryIndex = 0;
+  var galleryTitle = 'Full-Home Window Replacement — Dallas-Fort Worth, TX';
+
+  function renderGallerySlide() {
+    var img = galleryImages[galleryIndex];
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightboxImg').alt = img.caption;
+    document.getElementById('lightboxCaption').textContent = galleryTitle;
+    document.getElementById('lightboxCounter').textContent = img.caption + ' · Photo ' + (galleryIndex + 1) + ' of ' + galleryImages.length;
+    document.getElementById('lightboxPrev').style.display = 'flex';
+    document.getElementById('lightboxNext').style.display = 'flex';
+  }
+
+  function openGallery(index, event) {
+    if (event) event.stopPropagation();
+    galleryIndex = index;
+    renderGallerySlide();
+    document.getElementById('lightbox').classList.add('show');
+  }
+
+  function navGallery(direction, event) {
+    if (event) event.stopPropagation();
+    galleryIndex = (galleryIndex + direction + galleryImages.length) % galleryImages.length;
+    renderGallerySlide();
+  }
+
   function openLightbox(src, caption) {
     document.getElementById('lightboxImg').src = src;
     document.getElementById('lightboxImg').alt = caption;
     document.getElementById('lightboxCaption').textContent = caption;
+    document.getElementById('lightboxCounter').textContent = '';
+    document.getElementById('lightboxPrev').style.display = 'none';
+    document.getElementById('lightboxNext').style.display = 'none';
     document.getElementById('lightbox').classList.add('show');
   }
 
@@ -235,6 +241,10 @@
     if (event.key === 'Escape') {
       closeEstimateModal();
       closeLightbox();
+    }
+    if (document.getElementById('lightbox').classList.contains('show')) {
+      if (event.key === 'ArrowLeft') navGallery(-1);
+      if (event.key === 'ArrowRight') navGallery(1);
     }
   });
 </script>
