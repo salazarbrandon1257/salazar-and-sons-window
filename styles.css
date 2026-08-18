@@ -365,7 +365,7 @@ nav {
   font-weight: 700; line-height: 1.2;
   margin-bottom: 1rem;
 }
-.section-sub { color: var(--gray); font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+.section-sub { color: var(--steel-light); font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
 
 .services-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
