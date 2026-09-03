@@ -73,11 +73,32 @@
     <p class="section-sub">A look at some of our recent window installations and replacements across the Dallas-Fort Worth area.</p>
   </div>
   <div class="portfolio-grid">
-    <div class="portfolio-item" onclick="openGalleryModal()">
-      <img src="portfolio/773981623_122112796635329165_803829996374782383_n.jpg" loading="lazy" alt="Full-home window replacement project, arched entry window">
+    <div class="portfolio-item" onclick="openGalleryModal(0)">
+      <img src="portfolio/project 4/792882492_122115490221329165_2746226033518750864_n.jpg" loading="lazy" alt="Whole-home window replacement, finished home exterior">
+      <div class="portfolio-overlay">
+        <span>Whole-Home Window Replacement and Tint</span>
+        <small>Fort Worth, TX (5 Photos)</small>
+      </div>
+    </div>
+    <div class="portfolio-item" onclick="openGalleryModal(1)">
+      <img src="portfolio/project 1/773981623_122112796635329165_803829996374782383_n.jpg" loading="lazy" alt="Full-home window replacement project, arched entry window">
       <div class="portfolio-overlay">
         <span>Full-Home Window Replacement</span>
         <small>Grand Prairie, TX (7 Photos)</small>
+      </div>
+    </div>
+    <div class="portfolio-item" onclick="openGalleryModal(2)">
+      <img src="portfolio/project 2/0.jpg" loading="lazy" alt="Grid-pattern single-hung window replacement">
+      <div class="portfolio-overlay">
+        <span>Grid-Pattern Window Replacement</span>
+        <small>Dallas, TX (5 Photos)</small>
+      </div>
+    </div>
+    <div class="portfolio-item" onclick="openGalleryModal(3)">
+      <img src="portfolio/project 3/710755877_122101313313329165_4603716626842457175_n.jpg" loading="lazy" alt="Dark-frame single-hung window replacement">
+      <div class="portfolio-overlay">
+        <span>Window Addition</span>
+        <small>Oakcliff, TX (2 Photos)</small>
       </div>
     </div>
   </div>
@@ -169,21 +190,53 @@
     document.getElementById('estimateModal').style.display = 'none';
   }
 
-  var galleryImages = [
-    { src: 'portfolio/773981623_122112796635329165_803829996374782383_n.jpg', caption: 'Additional installation detail' },
-    { src: 'portfolio/1.jpg', caption: 'Arched entry window' },
-    { src: 'portfolio/2.jpg', caption: 'Arched double-hung window' },
-    { src: 'portfolio/3.jpg', caption: 'Argon-filled double-hung window' },
-    { src: 'portfolio/4.jpg', caption: 'Sliding window' },
-    { src: 'portfolio/5.jpg', caption: 'Black-frame sliding windows' },
-    { src: 'portfolio/6.jpg', caption: 'Home exterior, finished install' }
+  var galleryProjects = [
+    {
+      title: 'Whole-Home Window Replacement and Tint — Fort Worth, TX',
+      images: [
+        { src: 'portfolio/project 4/792882492_122115490221329165_2746226033518750864_n.jpg', caption: 'Finished home exterior' },
+        { src: 'portfolio/project 4/790256504_122115490299329165_1540030915730401396_n.jpg', caption: 'Row of double-hung windows, brick exterior' },
+        { src: 'portfolio/project 4/789775841_122115490281329165_7145693643268244774_n.jpg', caption: 'Double-hung window replacement, backyard' },
+        { src: 'portfolio/project 4/790434531_122115490269329165_3624265246418901364_n.jpg', caption: 'Double-hung window, brick exterior detail' },
+        { src: 'portfolio/project 4/791145023_122115490239329165_2883463383888377494_n.jpg', caption: 'Argon-filled single-hung window, patio area' }
+      ]
+    },
+    {
+      title: 'Full-Home Window Replacement — Grand Prairie, TX',
+      images: [
+        { src: 'portfolio/project 1/773981623_122112796635329165_803829996374782383_n.jpg', caption: 'Additional installation detail' },
+        { src: 'portfolio/project 1/1.jpg', caption: 'Arched entry window' },
+        { src: 'portfolio/project 1/2.jpg', caption: 'Arched double-hung window' },
+        { src: 'portfolio/project 1/3.jpg', caption: 'Argon-filled double-hung window' },
+        { src: 'portfolio/project 1/4.jpg', caption: 'Sliding window' },
+        { src: 'portfolio/project 1/5.jpg', caption: 'Black-frame sliding windows' },
+        { src: 'portfolio/project 1/6.jpg', caption: 'Home exterior, finished install' }
+      ]
+    },
+    {
+      title: 'Grid-Pattern Window Replacement — DFW Area',
+      images: [
+        { src: 'portfolio/project 2/0.jpg', caption: 'Grid-pattern double-hung window' },
+        { src: 'portfolio/project 2/733772329_122105687169329165_9074466442124403876_n.jpg', caption: 'Window replacement detail' },
+        { src: 'portfolio/project 2/734274928_122105687181329165_2253579904168973869_n.jpg', caption: 'Window replacement detail' },
+        { src: 'portfolio/project 2/736420673_122105687259329165_1390472901395589505_n.jpg', caption: 'Window replacement detail' },
+        { src: 'portfolio/project 2/736525112_122105687235329165_7026934388715873526_n.jpg', caption: 'Window replacement detail' }
+      ]
+    },
+    {
+      title: 'Double-Hung Window Replacement — DFW Area',
+      images: [
+        { src: 'portfolio/project 3/710755877_122101313313329165_4603716626842457175_n.jpg', caption: 'Dark-frame double-hung window' },
+        { src: 'portfolio/project 3/711566882_122101313301329165_1811276752739647614_n.jpg', caption: 'Exterior siding detail' }
+      ]
+    }
   ];
-  var galleryTitle = 'Full-Home Window Replacement — Grand Prairie, TX';
 
-  function openGalleryModal() {
-    document.getElementById('galleryModalTitle').textContent = galleryTitle;
+  function openGalleryModal(projectIndex) {
+    var project = galleryProjects[projectIndex];
+    document.getElementById('galleryModalTitle').textContent = project.title;
     var grid = document.getElementById('galleryModalGrid');
-    grid.innerHTML = galleryImages.map(function(img) {
+    grid.innerHTML = project.images.map(function(img) {
       return '<div class="gallery-modal-item"><img src="' + img.src + '" loading="lazy" alt="' + img.caption + '"></div>';
     }).join('');
     document.getElementById('galleryModal').classList.add('show');
