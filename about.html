@@ -10,18 +10,41 @@
   gtag('js', new Date());
   gtag('config', 'G-TEPP27488B');
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1666609791859335');
+fbq('track', 'PageView');
+// Conversion events: estimate form submissions (Lead) and phone taps (Contact)
+document.addEventListener('submit', function () { if (window.fbq) fbq('track', 'Lead'); }, true);
+document.addEventListener('click', function (e) {
+  var link = e.target.closest && e.target.closest('a[href^="tel:"]');
+  if (link && window.fbq) fbq('track', 'Contact');
+}, true);
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1666609791859335&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us | Salazar & Sons Window Co.</title>
-<link rel="canonical" href="https://www.salazarandsonswindow.com/about.html">
+<link rel="canonical" href="https://salazarandsonswindow.com/about.html">
 <meta name="description" content="Meet Brandon Salazar, owner of Salazar &amp; Sons Window Co. — a family-owned window installation, replacement, and repair company serving Dallas-Fort Worth.">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.salazarandsonswindow.com/about.html">
+<meta property="og:url" content="https://salazarandsonswindow.com/about.html">
 <meta property="og:title" content="About Us | Salazar &amp; Sons Window Co.">
 <meta property="og:description" content="Meet Brandon Salazar, owner of Salazar &amp; Sons Window Co., serving the Dallas-Fort Worth area.">
-<meta property="og:image" content="https://www.salazarandsonswindow.com/images/og-image.jpg">
+<meta property="og:image" content="https://salazarandsonswindow.com/images/og-image.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -38,14 +61,14 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html"><img src="images/salazar-sons-logo.png" loading="eager" alt="Salazar & Sons Window Co." class="nav-logo-img"></a>
+  <a href="/"><img src="images/salazar-sons-logo.png" loading="eager" alt="Salazar & Sons Window Co." class="nav-logo-img"></a>
     <ul class="nav-links" id="navLinks">
-    <li><a href="index.html#services">Services</a></li>
-    <li><a href="index.html#why">Why Us</a></li>
-    <li><a href="index.html#process">Process</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#why">Why Us</a></li>
+    <li><a href="/#process">Process</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
     <li><a href="about.html">About Us</a></li>
-    <li><a href="index.html#reviews">Reviews</a></li>
+    <li><a href="/#reviews">Reviews</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1.5rem;">
     <a href="tel:4699093185" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--navy);text-decoration:none;font-weight:600;font-size:0.95rem;letter-spacing:0.02em;transition:color 0.3s;" onmouseover="this.style.color='var(--steel)'" onmouseout="this.style.color='var(--navy)'">
