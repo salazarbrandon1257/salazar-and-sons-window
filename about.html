@@ -76,41 +76,59 @@
 </nav>
 
 <!-- PAGE HEADER -->
-<section style="padding:8rem 4rem 3rem;text-align:center;background:linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);">
-  <div class="section-tag">Get To Know Us</div>
-  <h1 style="font-family:'Playfair Display',serif;color:var(--white);font-size:2.75rem;margin-top:0.5rem;">About Salazar &amp; Sons Window Co.</h1>
+<section class="about-head">
+  <div>
+    <div class="section-tag">About Us</div>
+    <h1>About Salazar &amp; Sons Window Co.</h1>
+  </div>
+  <p>A Dallas family business that treats every home like our own.</p>
 </section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <div class="about-image">
-    <img width="1024" height="768" src="images/aboutMe.jpg" loading="lazy" alt="Brandon Salazar, owner of Salazar &amp; Sons Window Co. in Dallas, TX">
-  </div>
-
-  <div class="about-content">
-    <span class="section-tag">ABOUT THE OWNER</span>
-    <h2>Meet Brandon Salazar</h2>
-
-    <p>
+  <div class="about-grid">
+    <div class="about-image">
+      <img width="1024" height="768" src="images/aboutMe.jpg" loading="lazy" alt="Brandon Salazar, owner of Salazar &amp; Sons Window Co. in Dallas, TX">
+    </div>
+    <div class="about-content">
+      <span class="section-tag">About the Owner</span>
+      <h2>Meet Brandon Salazar</h2>
+      <p>
       Hi, my name is Brandon Salazar, and I’m the owner of Salazar & Sons Window Co. 
       I’ve lived in Dallas most of my life and spent years working in general construction before transitioning into real estate. 
       Through that experience, I developed a strong knowledge of window installation, repair, and replacement, along with a passion for quality craftsmanship.
-    </p>
-
-    <p>
+      </p>
+      <p>
       At Salazar & Sons Window Co, we take pride in providing honest service, dependable workmanship, and results that homeowners can trust. 
       Customer satisfaction is our top priority, and we’re committed to making sure every project is completed with care and attention to detail.
-    </p>
-
-    <p>
+      </p>
+      <p>
       If you’re looking for reliable window services, please don’t hesitate to call, text, or email us for a free quote.
       We’d be happy to help bring your vision to life.
-    </p>
-
-    <div class="about-contact">
-      <a href="tel:+14699093185" class="about-btn">Call Now</a>
-      <a href="mailto:salazarwindowco@gmail.com" class="about-btn secondary">Email Us</a>
+      </p>
+      <div class="about-contact">
+        <a href="tel:+14699093185" class="btn-primary">Call (469) 909-3185</a>
+        <a href="mailto:salazarwindowco@gmail.com" class="btn-secondary">Email us</a>
+      </div>
     </div>
+  </div>
+  <ul class="about-values">
+    <li><strong>Family-owned</strong><span>Based in Dallas, serving all of DFW</span></li>
+    <li><strong>Licensed and insured</strong><span>Registered with the City of Dallas</span></li>
+    <li><strong>Lifetime leak warranty</strong><span>On every installation we do</span></li>
+    <li><strong>5-star Google reviews</strong><span>From homeowners across DFW</span></li>
+  </ul>
+</section>
+
+<!-- CTA -->
+<section class="portfolio-cta">
+  <div>
+    <h2>Ready to talk windows?</h2>
+    <p>Free, no-obligation estimate. We measure within 1–2 days.</p>
+  </div>
+  <div class="portfolio-cta-buttons">
+    <a href="tel:+14699093185" class="btn-primary">Call (469) 909-3185</a>
+    <button type="button" class="btn-ghost" onclick="openEstimateModal()">Request an estimate online</button>
   </div>
 </section>
 
