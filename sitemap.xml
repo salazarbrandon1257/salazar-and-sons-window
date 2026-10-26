@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://salazarandsonswindow.com/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://salazarandsonswindow.com/portfolio.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://salazarandsonswindow.com/portfolio/project%204/792882492_122115490221329165_2746226033518750864_n.jpg</image:loc><image:title>Whole-home window replacement, finished home exterior</image:title></image:image>
+    <image:image><image:loc>https://salazarandsonswindow.com/portfolio/project%201/773981623_122112796635329165_803829996374782383_n.jpg</image:loc><image:title>Full-home window replacement project, arched entry window</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://salazarandsonswindow.com/about.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

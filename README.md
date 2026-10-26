@@ -63,7 +63,7 @@ No build tools, package managers, or external CSS/JS frameworks are required.
 ├── CNAME               # Custom domain reference (salazarandsonswindow.com)
 ├── LICENSE             # MIT License
 ├── images/
-│   ├── aboutMe.png     # About section photo
+│   ├── aboutMe.jpg     # About section photo
 │   ├── favicon.ico     # Site favicon
 │   ├── logo.png        # Logo (light variant)
 │   └── logo_dark.png   # Logo (dark variant)
