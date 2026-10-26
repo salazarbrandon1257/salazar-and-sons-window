@@ -76,52 +76,91 @@
 </nav>
 
 <!-- PAGE HEADER -->
-<section style="padding:8rem 4rem 3rem;text-align:center;background:linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);">
-  <div class="section-tag">Our Work</div>
-  <h1 style="font-family:'Playfair Display',serif;color:var(--white);font-size:2.75rem;margin-top:0.5rem;">Portfolio</h1>
+<section class="portfolio-head">
+  <div>
+    <div class="section-tag">Our Work</div>
+    <h1>Recent projects across Dallas–Fort Worth</h1>
+  </div>
+  <p>Real homes, real installs. Tap any project to see every photo.</p>
 </section>
 
 <!-- PORTFOLIO -->
 <section class="portfolio" id="portfolio">
-  <div class="section-header">
-    <p class="section-sub">A look at some of our recent window installations and replacements across the Dallas-Fort Worth area.</p>
+  <div class="portfolio-feature">
+    <div class="portfolio-feature-text">
+      <div class="section-tag">Latest project</div>
+      <h2>Brick Wall Window Addition</h2>
+      <p>Haslet, TX. We cut a new opening through exterior brick, framed it, and installed a Westlake window, finished inside and out.</p>
+      <button type="button" class="portfolio-feature-link" onclick="openGalleryModal(0)">See all 4 photos</button>
+    </div>
+    <div class="before-after">
+      <figure><img width="1536" height="2048" src="portfolio/project 6/845747081_122122011555329165_8449230465234244569_n.jpg" loading="lazy" alt="Brick wall before the window addition"><figcaption>Before</figcaption></figure>
+      <figure><img width="1536" height="2048" src="portfolio/project 6/844474646_122122011483329165_3636527917285980327_n.jpg" loading="lazy" alt="Brick wall after the window addition"><figcaption>After</figcaption></figure>
+    </div>
   </div>
+
+  <h2 class="portfolio-grid-title">All projects</h2>
   <div class="portfolio-grid">
-    <div class="portfolio-item" onclick="openGalleryModal(0)">
+    <button type="button" class="portfolio-item" onclick="openGalleryModal(0)">
+      <img width="1536" height="2048" src="portfolio/project 6/844474646_122122011483329165_3636527917285980327_n.jpg" loading="lazy" alt="New window added through a brick wall, Haslet, TX">
+      <span class="portfolio-overlay">
+        <em>Addition</em>
+        <strong>Brick Wall Window Addition</strong>
+        <small>Haslet, TX · 4 photos</small>
+      </span>
+    </button>
+    <button type="button" class="portfolio-item" onclick="openGalleryModal(1)">
       <img width="1536" height="2048" src="portfolio/project 5/10c67c90-564b-467d-8240-46e10f0608f9.jfif" loading="lazy" alt="Gas-strut window addition project, Dallas, TX">
-      <div class="portfolio-overlay">
-        <span>Gas-Strut Window Addition</span>
-        <small>Dallas, TX (5 Photos)</small>
-      </div>
-    </div>
-    <div class="portfolio-item" onclick="openGalleryModal(1)">
+      <span class="portfolio-overlay">
+        <em>Addition</em>
+        <strong>Gas-Strut Window Addition</strong>
+        <small>Dallas, TX · 5 photos</small>
+      </span>
+    </button>
+    <button type="button" class="portfolio-item" onclick="openGalleryModal(2)">
       <img width="960" height="1280" src="portfolio/project 4/792882492_122115490221329165_2746226033518750864_n.jpg" loading="lazy" alt="Whole-home window replacement, finished home exterior">
-      <div class="portfolio-overlay">
-        <span>Whole-Home Window Replacement and Tint</span>
-        <small>Fort Worth, TX (5 Photos)</small>
-      </div>
-    </div>
-    <div class="portfolio-item" onclick="openGalleryModal(2)">
-      <img width="960" height="1280" src="portfolio/project 1/773981623_122112796635329165_803829996374782383_n.jpg" loading="lazy" alt="Full-home window replacement project, arched entry window">
-      <div class="portfolio-overlay">
-        <span>Full-Home Window Replacement</span>
-        <small>Grand Prairie, TX (7 Photos)</small>
-      </div>
-    </div>
-    <div class="portfolio-item" onclick="openGalleryModal(3)">
-      <img width="960" height="1280" src="portfolio/project 2/0.jpg" loading="lazy" alt="Grid-pattern single-hung window replacement">
-      <div class="portfolio-overlay">
-        <span>Grid-Pattern Window Replacement</span>
-        <small>Dallas, TX (5 Photos)</small>
-      </div>
-    </div>
-    <div class="portfolio-item" onclick="openGalleryModal(4)">
-      <img width="591" height="1280" src="portfolio/project 3/710755877_122101313313329165_4603716626842457175_n.jpg" loading="lazy" alt="Dark-frame single-hung window replacement">
-      <div class="portfolio-overlay">
-        <span>Window Addition</span>
-        <small>Oakcliff, TX (2 Photos)</small>
-      </div>
-    </div>
+      <span class="portfolio-overlay">
+        <em>Replacement</em>
+        <strong>Whole-Home Window Replacement and Tint</strong>
+        <small>Fort Worth, TX · 5 photos</small>
+      </span>
+    </button>
+    <button type="button" class="portfolio-item" onclick="openGalleryModal(3)">
+      <img width="960" height="1280" src="portfolio/project 1/773981623_122112796635329165_803829996374782383_n.jpg" loading="lazy" alt="Full-home window replacement, Grand Prairie, TX">
+      <span class="portfolio-overlay">
+        <em>Replacement</em>
+        <strong>Full-Home Window Replacement</strong>
+        <small>Grand Prairie, TX · 7 photos</small>
+      </span>
+    </button>
+    <button type="button" class="portfolio-item" onclick="openGalleryModal(4)">
+      <img width="960" height="1280" src="portfolio/project 2/0.jpg" loading="lazy" alt="Grid-pattern double-hung window replacement">
+      <span class="portfolio-overlay">
+        <em>Replacement</em>
+        <strong>Grid-Pattern Window Replacement</strong>
+        <small>Dallas, TX · 5 photos</small>
+      </span>
+    </button>
+    <button type="button" class="portfolio-item" onclick="openGalleryModal(5)">
+      <img width="591" height="1280" src="portfolio/project 3/710755877_122101313313329165_4603716626842457175_n.jpg" loading="lazy" alt="Dark-frame window addition, Oakcliff, TX">
+      <span class="portfolio-overlay">
+        <em>Addition</em>
+        <strong>Window Addition</strong>
+        <small>Oakcliff, TX · 2 photos</small>
+      </span>
+    </button>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="portfolio-cta">
+  <div>
+    <h2>Want results like these?</h2>
+    <p>Free, no-obligation estimate. We measure within 1–2 days.</p>
+  </div>
+  <div class="portfolio-cta-buttons">
+    <a href="tel:+14699093185" class="btn-primary">Call (469) 909-3185</a>
+    <button type="button" class="btn-ghost" onclick="openEstimateModal()">Request an estimate online</button>
   </div>
 </section>
 
@@ -251,6 +290,15 @@
 
   var galleryProjects = [
     {
+      title: 'Brick Wall Window Addition — Haslet, TX',
+      images: [
+        { src: 'portfolio/project 6/845747081_122122011555329165_8449230465234244569_n.jpg', caption: 'Before: exterior brick wall' },
+        { src: 'portfolio/project 6/844474646_122122011483329165_3636527917285980327_n.jpg', caption: 'After: new window through the brick' },
+        { src: 'portfolio/project 6/843141843_122122011411329165_1084987834850223460_n.jpg', caption: 'Before: interior wall' },
+        { src: 'portfolio/project 6/845552888_122122011435329165_2884064468041646080_n.jpg', caption: 'After: finished interior' }
+      ]
+    },
+    {
       title: 'Gas-Strut Window Addition — Dallas, TX',
       images: [
         { src: 'portfolio/project 5/10c67c90-564b-467d-8240-46e10f0608f9.jfif', caption: 'Window addition, exterior view' },
@@ -283,7 +331,7 @@
       ]
     },
     {
-      title: 'Grid-Pattern Window Replacement — DFW Area',
+      title: 'Grid-Pattern Window Replacement — Dallas, TX',
       images: [
         { src: 'portfolio/project 2/0.jpg', caption: 'Grid-pattern double-hung window' },
         { src: 'portfolio/project 2/733772329_122105687169329165_9074466442124403876_n.jpg', caption: 'Window replacement detail' },
@@ -293,9 +341,9 @@
       ]
     },
     {
-      title: 'Double-Hung Window Replacement — DFW Area',
+      title: 'Window Addition — Oakcliff, TX',
       images: [
-        { src: 'portfolio/project 3/710755877_122101313313329165_4603716626842457175_n.jpg', caption: 'Dark-frame double-hung window' },
+        { src: 'portfolio/project 3/710755877_122101313313329165_4603716626842457175_n.jpg', caption: 'Dark-frame window addition' },
         { src: 'portfolio/project 3/711566882_122101313301329165_1811276752739647614_n.jpg', caption: 'Exterior siding detail' }
       ]
     }
