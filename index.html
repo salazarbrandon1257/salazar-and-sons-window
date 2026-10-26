@@ -563,13 +563,13 @@
 <!-- First-Visit Promotional CTA -->
 <div id="promoModal" class="promo-modal" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
   <div class="promo-content">
-    <button class="promo-close" onclick="closePromoModal()" aria-label="Close">&times;</button>
-    <div class="promo-badge">Limited-Time Offer</div>
-    <h2 id="promoTitle">New Windows for <span>as Low as $99/Month</span></h2>
-    <p>Upgrade your home with professionally installed windows from Salazar &amp; Sons Window Co.</p>
-    <button class="promo-cta" onclick="closePromoModal(); openEstimateModal();">Get Your Free Quote</button>
-    <div style="display:flex;justify-content:center;margin-top:0.75rem;">
-      <a href="https://www.acornfinance.com/pre-qualify/?d=D68FN&utm_medium=web_pre_qual_banner" target="_blank" rel="noopener noreferrer" style="color:var(--steel);font-weight:600;font-size:0.85rem;text-decoration:underline;">See if you qualify</a>
+    <button type="button" class="promo-close" onclick="closePromoModal()" aria-label="Close">&times;</button>
+    <div class="promo-badge">Limited-time offer</div>
+    <h2 id="promoTitle">New windows for as low as $99/month</h2>
+    <p class="promo-lead">Upgrade your home with professionally installed windows from Salazar &amp; Sons Window Co.</p>
+    <div class="promo-actions">
+      <button type="button" class="btn-primary" onclick="closePromoModal(); openEstimateModal();">Get your free quote</button>
+      <a href="https://www.acornfinance.com/pre-qualify/?d=D68FN&utm_medium=web_pre_qual_banner" target="_blank" rel="noopener noreferrer" class="promo-link">See if you qualify</a>
     </div>
     <p class="promo-fine-print">Monthly payment shown is subject to approved financing, terms, and eligibility. Contact us for current offer details. Final pricing depends on window size, material choice, and number of units purchased.</p>
   </div>
