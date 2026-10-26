@@ -60,6 +60,8 @@ No build tools, package managers, or external CSS/JS frameworks are required.
 ├── index.html          # Main (and only) HTML page — contains all sections
 ├── style.css           # Complete stylesheet (~24KB)
 ├── script.js           # Navigation toggle, modal, scroll behavior (~6KB)
+├── reviews-slider.js   # Drifting, draggable reviews row
+├── tests/              # Unit tests (node --test)
 ├── CNAME               # Custom domain reference (salazarandsonswindow.com)
 ├── LICENSE             # MIT License
 ├── images/
@@ -88,6 +90,14 @@ python -m http.server 8000
 ```
 
 Then visit `http://localhost:8000` in your browser.
+
+### Tests
+
+The reviews slider's motion logic has unit tests that use Node's built-in test runner (Node 18+, no install needed):
+
+```bash
+node --test
+```
 
 ---
 
