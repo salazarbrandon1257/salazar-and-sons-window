@@ -132,8 +132,10 @@ nav.scrolled .nav-logo-img { height: 44px; }
   gap: 3.5rem;
   padding: 6.5rem 4rem 3.5rem;
   position: relative; overflow: hidden;
-  /* slightly zoomed and anchored bottom-right so the arched window sits beside the form */
-  background: #111318 url('images/hero-home.jpg') 100% 100% / 115% auto no-repeat;
+  /* slightly zoomed and anchored bottom-right so the arched window sits beside the form.
+     Height is the larger of that zoom (115% width = 72.3vw tall) or the full hero,
+     so the photo never stops short of the top when the hero is tall. */
+  background: #111318 url('images/hero-home.jpg') 100% 100% / auto max(100%, 72.3vw) no-repeat;
 }
 /* charcoal wash: darkest behind the text, lighter over the house */
 .hero::before {
