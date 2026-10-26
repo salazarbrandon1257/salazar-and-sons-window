@@ -848,59 +848,94 @@ footer {
 }
 
 /* ── PORTFOLIO ── */
+/* ── PORTFOLIO PAGE ── */
+.portfolio-head {
+  display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: end;
+  padding: 8rem 4rem 3.5rem;
+  background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+}
+.portfolio-head h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.1;
+  margin-top: 0.5rem;
+}
+.portfolio-head p { color: var(--steel-light); line-height: 1.6; justify-self: end; max-width: 34ch; }
 .portfolio {
-  padding: 6rem 4rem;
-  background: var(--cream);
+  padding: 4rem 4rem 5rem;
+  background: var(--cream); color: var(--navy);
 }
-.portfolio .section-header {
-  text-align: center;
-  margin-bottom: 3rem;
+.portfolio-feature {
+  display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2.5rem; align-items: center;
+  background: var(--white); border-radius: 18px; padding: 2rem;
+  box-shadow: 0 10px 30px rgba(16,33,61,0.08);
 }
-.portfolio .section-title {
-  color: var(--navy);
+.portfolio-feature h2 { font-family: 'Playfair Display', serif; font-size: 1.9rem; margin: 0.4rem 0 0.6rem; }
+.portfolio-feature p { color: #556; line-height: 1.6; }
+.portfolio-feature-link {
+  margin-top: 1rem; padding: 0;
+  background: none; border: none; cursor: pointer;
+  font: 600 0.95rem 'DM Sans', sans-serif; color: var(--navy);
+  text-decoration: underline; text-underline-offset: 4px;
 }
-.portfolio .section-sub {
-  font-size: 1rem;
-  color: #556;
-  max-width: 600px;
-  margin: 0 auto;
+.before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.before-after figure { position: relative; margin: 0; border-radius: 12px; overflow: hidden; aspect-ratio: 3 / 4; }
+.before-after img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.before-after figcaption {
+  position: absolute; left: 0.7rem; top: 0.7rem;
+  padding: 0.25rem 0.7rem; border-radius: 999px;
+  background: rgba(16,33,61,0.8); color: var(--white);
+  font-size: 0.75rem; font-weight: 600;
 }
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 4rem;
-}
+.portfolio-grid-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 3rem 0 1.2rem; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
 .portfolio-item {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
+  position: relative; display: block; width: 100%;
+  aspect-ratio: 4 / 3; padding: 0; border: none;
+  border-radius: 14px; overflow: hidden; cursor: pointer;
   background: var(--steel-light);
-  box-shadow: 0 4px 16px rgba(16,33,61,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 20px rgba(16,33,61,0.12);
+  text-align: left;
 }
-.portfolio-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(16,33,61,0.18);
-}
-.portfolio-item img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s;
-}
-.portfolio-item:hover img { transform: scale(1.06); }
+.portfolio-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.portfolio-item:hover img { transform: scale(1.04); }
+.portfolio-item:focus-visible { outline: 3px solid var(--steel); outline-offset: 3px; }
 .portfolio-overlay {
   position: absolute; inset: 0;
-  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end;
-  padding: 1.25rem;
-  background: linear-gradient(180deg, transparent 40%, rgba(16,33,61,0.85) 100%);
-  color: var(--white);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 1.2rem;
+  background: linear-gradient(180deg, transparent 45%, rgba(16,33,61,0.88) 100%);
+  color: var(--white); font-family: 'DM Sans', sans-serif;
 }
-.portfolio-overlay span { font-weight: 600; font-size: 1rem; }
-.portfolio-overlay small { color: var(--steel-light); font-size: 0.8rem; margin-top: 0.2rem; }
+.portfolio-overlay em {
+  align-self: flex-start; margin-bottom: 0.6rem;
+  padding: 0.25rem 0.65rem; border-radius: 999px;
+  background: rgba(255,255,255,0.18); backdrop-filter: blur(4px);
+  font-style: normal; font-size: 0.72rem; font-weight: 600;
+}
+.portfolio-overlay strong { font-weight: 600; font-size: 1.02rem; }
+.portfolio-overlay small { color: var(--steel-light); font-size: 0.8rem; margin-top: 0.15rem; }
+.portfolio-cta {
+  display: flex; justify-content: space-between; align-items: center; gap: 2rem;
+  padding: 3.5rem 4rem;
+  background: var(--navy);
+}
+.portfolio-cta h2 { font-family: 'Playfair Display', serif; font-size: 2rem; }
+.portfolio-cta p { color: var(--steel-light); margin-top: 0.4rem; }
+.portfolio-cta-buttons { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.portfolio-cta .btn-primary { background: var(--white); color: var(--navy); }
+.portfolio-cta .btn-primary::after { background: var(--steel); }
+.portfolio-cta .btn-primary:hover { background: var(--cream); }
+@media (max-width: 900px) {
+  .portfolio-head { grid-template-columns: 1fr; gap: 1rem; padding: 7rem 1.5rem 2.5rem; }
+  .portfolio-head p { justify-self: start; }
+  .portfolio { padding: 2.5rem 1.5rem 3.5rem; }
+  .portfolio-feature { grid-template-columns: 1fr; padding: 1.4rem; gap: 1.5rem; }
+  .portfolio-grid { grid-template-columns: 1fr 1fr; }
+  .portfolio-cta { flex-direction: column; align-items: flex-start; padding: 3rem 1.5rem; }
+}
+@media (max-width: 560px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+}
 
 /* Gallery Modal */
 .gallery-modal {
@@ -1026,7 +1061,6 @@ footer {
 
 @media (max-width: 768px) {
   .about { grid-template-columns: 1fr; gap: 2rem; }
-  .portfolio-grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* ── FAQ ── */
@@ -1076,6 +1110,7 @@ footer {
 .faq-item p a { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 900px) {
   .faq { padding: 2rem 1.5rem 4rem; }
+  .faq-item { padding: 0 1.1rem; }
   .faq-item summary { font-size: 1.05rem; }
   .faq-item p { padding-right: 0; }
 }
@@ -1090,4 +1125,3 @@ footer {
   .nav-links a { font-size: 0.8rem; letter-spacing: 0.03em; white-space: nowrap; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
-  .faq-item { padding: 0 1.1rem; }
