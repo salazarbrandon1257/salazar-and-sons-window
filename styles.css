@@ -324,7 +324,7 @@ nav.scrolled .nav-logo-img { height: 44px; }
 
 /* ── SERVICES ── */
 .services {
-  padding: 7rem 4rem;
+  padding: 6rem 4rem;
   background: var(--navy);
 }
 .section-header { text-align: center; margin-bottom: 4rem; }
@@ -342,56 +342,42 @@ nav.scrolled .nav-logo-img { height: 44px; }
 }
 .section-sub { color: var(--steel-light); font-size: 1rem; max-width: 500px; margin: 0 auto; line-height: 1.7; }
 
-.services-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 2px; background: rgba(111,130,158,0.12);
-  border: 1px solid rgba(111,130,158,0.12);
+.services-top {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end;
+  margin-bottom: 2.75rem;
 }
+.services-top .section-title { margin-bottom: 0; }
+.services-top .section-sub { margin: 0 0 0 auto; max-width: 46ch; }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
 .service-card {
-  background: var(--navy-mid) center/cover no-repeat;
-  padding: 3rem 2.5rem;
-  transition: all 0.4s; cursor: default;
-  position: relative; overflow: hidden;
+  background: var(--navy-mid);
+  border-radius: 14px; overflow: hidden;
+  display: flex; flex-direction: column;
 }
-.service-card::after {
+.service-photo { position: relative; }
+/* light navy wash so photos sit in the palette */
+.service-photo::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(24,44,73,0.55) 0%, rgba(16,33,61,0.45) 100%);
-  z-index: 1;
-  pointer-events: none;
+  background: linear-gradient(180deg, rgba(16,33,61,0.12) 0%, rgba(24,44,73,0.55) 100%);
 }
-.service-card::before {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 3px; background: var(--steel);
-  transform: scaleX(0); transition: transform 0.4s;
-  z-index: 3;
-}
-.service-card:hover { transform: translateY(-4px); }
-.service-card:hover::before { transform: scaleX(1); }
-.service-card > * { position: relative; z-index: 2; }
-.service-card:nth-child(1) { background-image: url('images/install.jfif'); }
-.service-card:nth-child(2) { background-image: url('images/replacement.jfif'); }
-.service-card:nth-child(3) { background-image: url('images/repair.jfif'); }
-.service-icon {
-  width: 60px; height: 60px; margin-bottom: 1.5rem;
-  display: flex; align-items: center; justify-content: center;
-}
-.service-icon svg { width: 100%; height: 100%; }
+.service-photo img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.service-body { padding: 1.1rem 1.2rem 1.25rem; display: flex; flex-direction: column; flex: 1; }
 .service-card h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem; font-weight: 700;
-  margin-bottom: 1rem; color: var(--white);
+  font-size: 1.15rem; font-weight: 700;
+  margin-bottom: 0.4rem; color: var(--white);
 }
-.service-card p { color: #e8ecf2; line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem; }
+.service-card p { color: var(--steel-light); line-height: 1.55; font-size: 0.88rem; margin-bottom: 0.9rem; }
 .service-link {
-  color: #aebaca; font-size: 0.85rem;
-  font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; text-decoration: none;
+  margin-top: auto;
+  color: var(--white); font-size: 0.88rem; font-weight: 600;
+  text-decoration: none;
   display: inline-flex; align-items: center; gap: 0.5rem;
-  transition: gap 0.3s;
 }
-.service-card:hover .service-link { gap: 0.8rem; }
+.service-link::after { content: '\2192'; color: var(--steel); transition: transform 0.25s; }
+.service-link:hover::after, .service-link:focus-visible::after { transform: translateX(3px); }
+.service-link:focus-visible { outline: 2px solid var(--steel); outline-offset: 3px; }
 
 /* ── WHY US ── */
 .why {
@@ -851,7 +837,9 @@ footer {
       .stats { grid-template-columns: 1fr; }
   .stat { border-right: none; border-bottom: 1px solid rgba(16,33,61,0.10); }
   .services { padding: 4rem 1.5rem; }
-  .services-grid { grid-template-columns: 1fr; gap: 2px; }
+  .services-top { grid-template-columns: 1fr; gap: 1rem; }
+  .services-top .section-sub { margin: 0; }
+  .services-grid { grid-template-columns: 1fr; gap: 1rem; }
   .why { padding: 4rem 1.5rem; }
   .why-grid { grid-template-columns: 1fr; gap: 2rem; }
   .why-visual { display: none; }
@@ -1177,4 +1165,5 @@ footer {
 }
 @media (min-width: 901px) and (max-width: 1200px) {
   .nav-links { gap: 1.5rem; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
