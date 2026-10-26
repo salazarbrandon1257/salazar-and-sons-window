@@ -51,7 +51,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html"><img width="800" height="650" src="images/salazar-sons-logo.png" loading="eager" alt="Salazar & Sons Window Co." class="nav-logo-img"></a>
+  <a href="index.html"><img width="620" height="800" src="images/icon.png" loading="eager" alt="Salazar & Sons Window Co." class="nav-logo-img"></a>
     <ul class="nav-links" id="navLinks">
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#why">Why Us</a></li>
@@ -157,12 +157,12 @@
 </div>
 
 <!-- Estimate Popup Modal -->
-<div id="estimateModal" class="modal">
+<div id="estimateModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="estimateTitle">
   <div class="modal-content">
     
-    <span class="close-btn" onclick="closeEstimateModal()">&times;</span>
+    <button type="button" class="close-btn" onclick="closeEstimateModal()" aria-label="Close">&times;</button>
 
-    <h2>Free Estimate</h2>
+    <h2 id="estimateTitle">Free Estimate</h2>
     <p>Fill out the form below and we’ll contact you shortly.</p>
 
     <form action="https://formsubmit.co/salazarwindowco@gmail.com" method="POST" class="estimate-form">
@@ -178,7 +178,7 @@
 
       <textarea name="message" rows="5" placeholder="Tell us about your project"></textarea>
 
-      <button type="submit" class="submit-btn">
+      <button type="submit" class="btn-primary submit-btn">
         Submit Request
       </button>
     </form>
@@ -186,6 +186,14 @@
   </div>
 </div>
 <script>
+  // Slim the nav once the page scrolls
+  (function () {
+    const nav = document.querySelector('nav');
+    const update = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
   function openEstimateModal() {
     document.getElementById('estimateModal').style.display = 'flex';
   }
