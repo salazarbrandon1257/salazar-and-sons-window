@@ -1,119 +1,88 @@
 # Salazar & Sons Window Co.
 
-A polished, single-page website for **Salazar & Sons Window Co.**, a family-owned window services company serving the Dallas–Fort Worth (DFW) metro area.
+Website for **Salazar & Sons Window Co.**, a family-owned window installation, replacement, repair, and window addition company serving the Dallas–Fort Worth area.
 
 **Live site:** [salazarandsonswindow.com](https://salazarandsonswindow.com)
 
-![Logo](images/logo.png)
-
 ---
 
-## Table of Contents
+## Pages
 
-- [About](#about)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Development](#development)
-- [Deployment](#deployment)
-- [License](#license)
+- **Home** (`index.html`): hero with estimate form, services, why choose us, process, reviews slider, FAQ, and call-to-action
+- **Portfolio** (`portfolio.html`): featured before/after project and a gallery of past jobs
+- **About** (`about.html`): owner story, proof points, and call-to-action
+- **404** (`404.html`): shown by GitHub Pages for missing URLs
 
----
-
-## About
-
-Salazar & Sons Window Co. provides window installation, replacement, and repair services across the DFW area. This website serves as the company's online presence, showcasing their services, process, and values — with clear calls to action for free estimates.
-
----
-
-## Features
-
-- **Responsive single-page layout** — fully responsive across mobile, tablet, and desktop
-- **Sections:** Hero, Stats, Services, Why Choose Us, Process, Contact, and Footer
-- **Interactive modal** for free estimate requests
-- **Smooth scroll navigation** between sections
-- **Google Analytics** integration (G-TEPP27488B)
-- **Custom Google Fonts** — Playfair Display (headings) + DM Sans (body)
-- **CSS-only window showcase animation** in the hero section
-- **Color theme** — Navy, Gold, and Cream palette for a professional, high-trust look
+Shared across pages: top bar with phone menu, free-estimate pop-up form, and footer.
 
 ---
 
 ## Tech Stack
 
-| Layer          | Technology        |
-|----------------|-------------------|
-| Structure      | HTML5             |
-| Styling        | CSS3 (custom, no frameworks) |
-| Interactivity  | Vanilla JavaScript |
-| Analytics      | Google Analytics (gtag.js) |
-| Fonts          | Google Fonts      |
-| Hosting        | Netlify           |
+| Layer         | Technology                                   |
+|---------------|----------------------------------------------|
+| Structure     | HTML5                                        |
+| Styling       | One custom stylesheet (`styles.css`), no frameworks |
+| Interactivity | Vanilla JavaScript (inline per page, plus `reviews-slider.js`) |
+| Forms         | [FormSubmit](https://formsubmit.co) (emails estimate requests) |
+| Analytics     | Google Analytics (gtag.js)                   |
+| Fonts         | Google Fonts: Playfair Display + DM Sans     |
+| Hosting       | GitHub Pages with a custom domain            |
 
-No build tools, package managers, or external CSS/JS frameworks are required.
+No build tools or package managers are required.
 
 ---
 
 ## Project Structure
 
 ```
-├── index.html          # Main (and only) HTML page — contains all sections
-├── style.css           # Complete stylesheet (~24KB)
-├── script.js           # Navigation toggle, modal, scroll behavior (~6KB)
-├── reviews-slider.js   # Drifting, draggable reviews row
-├── tests/              # Unit tests (node --test)
-├── CNAME               # Custom domain reference (salazarandsonswindow.com)
-├── LICENSE             # MIT License
-├── images/
-│   ├── aboutMe.jpg     # About section photo
-│   ├── favicon.ico     # Site favicon
-│   ├── logo.png        # Logo (light variant)
-│   └── logo_dark.png   # Logo (dark variant)
-└── README.md           # This file
+├── index.html          # Home page
+├── portfolio.html      # Portfolio page (gallery data lives in its inline script)
+├── about.html          # About page
+├── 404.html            # Not-found page (uses root-relative paths)
+├── styles.css          # Stylesheet for all pages
+├── reviews-slider.js   # Drifting, draggable reviews row on the home page
+├── tests/              # Unit tests for the reviews slider (node --test)
+├── images/             # Logos, hero photo, service photos, social share image
+├── portfolio/          # Project photos, one folder per project
+├── robots.txt, sitemap.xml
+├── CNAME               # Custom domain for GitHub Pages
+└── LICENSE
 ```
 
 ---
 
 ## Development
 
-Since this is a static site with no build step, you can open it directly in any browser:
+It's a static site, so serve the folder and open it in a browser:
 
 ```bash
-# On macOS
-open index.html
-
-# On Windows
-start index.html
-
-# Or serve locally with Python
 python -m http.server 8000
 ```
 
-Then visit `http://localhost:8000` in your browser.
+Then visit `http://localhost:8000`.
 
 ### Tests
 
-The reviews slider's motion logic has unit tests that use Node's built-in test runner (Node 18+, no install needed):
+The reviews slider's motion logic has unit tests using Node's built-in test runner (Node 18+, no install needed):
 
 ```bash
 node --test
 ```
 
+### Adding a portfolio project
+
+1. Put the photos in a new folder under `portfolio/`.
+2. In `portfolio.html`, add a card to the grid and an entry to the `galleryProjects` list in the inline script. The card's `openGalleryModal(n)` number must match the entry's position in that list.
+
 ---
 
 ## Deployment
 
-The site is deployed on **Netlify** with a custom domain (`salazarandsonswindow.com`).
-
-To deploy updates, simply commit and push to the connected branch — Netlify automatically
-builds and publishes the latest version.
+GitHub Pages publishes the site from the **`feature/gold-black-hero`** branch. Every push to that branch goes live at salazarandsonswindow.com within a minute or two.
 
 ---
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-**© 2026 Salazar & Sons Window Co.**
