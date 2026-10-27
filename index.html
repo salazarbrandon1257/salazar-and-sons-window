@@ -18,7 +18,7 @@
   });
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href^="tel:"]');
-    if (link) gtag('event', 'click_to_call', { link_text: link.textContent.trim() });
+    if (link && !e.defaultPrevented) gtag('event', 'click_to_call', { link_text: link.textContent.trim() });
   });
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -683,6 +683,16 @@
       localStorage.setItem('promoSeen', '1');
     } catch (e) {}
     setTimeout(openPromoModal, 450);
+  });
+
+  // "Get a quote" calls on phones; on computers it opens the estimate form instead.
+  document.querySelectorAll('.service-link').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        event.preventDefault();
+        openEstimateModal();
+      }
+    });
   });
 
   // Close either modal when clicking its backdrop.
