@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TEPP27488B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Only record visits to the live site (Analytics and Meta Pixel), not local previews
+  if (location.hostname.endsWith('salazarandsonswindow.com')) {
+    gtag('js', new Date());
+    gtag('config', 'G-TEPP27488B');
+    // Meta Pixel
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1666609791859335');
+    fbq('track', 'PageView');
+  }
+  // Count estimate requests and phone taps as leads
+  document.addEventListener('submit', function (e) {
+    if (!e.target.matches('form[action*="formsubmit.co"]')) return;
+    gtag('event', 'generate_lead', { form_name: e.target.className });
+    if (window.fbq) fbq('track', 'Lead');
+  });
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="tel:"]');
+    if (!link || e.defaultPrevented) return;
+    gtag('event', 'click_to_call', { link_text: link.innerText.trim() });
+    if (window.fbq) fbq('track', 'Contact');
+  });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Window Materials Guide: Vinyl, Fiberglass, Wood &amp; More | Salazar &amp; Sons</title>
+<link rel="canonical" href="https://salazarandsonswindow.com/window-materials.html">
+<meta name="description" content="Compare vinyl, fiberglass, aluminum, wood, and composite windows: energy efficiency, upkeep, and how each holds up in Texas heat. Free estimates in Dallas–Fort Worth.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Salazar &amp; Sons Window Co.">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://salazarandsonswindow.com/window-materials.html">
+<meta property="og:title" content="Window Materials Guide: Vinyl, Fiberglass, Wood &amp; More | Salazar &amp; Sons">
+<meta property="og:description" content="Compare vinyl, fiberglass, aluminum, wood, and composite windows: energy efficiency, upkeep, and how each holds up in Texas heat. Free estimates in Dallas–Fort Worth.">
+<meta property="og:image" content="https://salazarandsonswindow.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Window replacement by Salazar &amp; Sons Window Co. in Dallas-Fort Worth">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://salazarandsonswindow.com/images/og-image.jpg">
+<meta name="twitter:title" content="Window Materials Guide: Vinyl, Fiberglass, Wood &amp; More | Salazar &amp; Sons">
+<meta name="twitter:description" content="Compare vinyl, fiberglass, aluminum, wood, and composite windows: energy efficiency, upkeep, and how each holds up in Texas heat. Free estimates in Dallas–Fort Worth.">
+
+<!-- Favicon (moved from body) -->
+<link rel="icon" href="images/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta name="theme-color" content="#0a1a2f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://salazarandsonswindow.com/"},{"@type":"ListItem","position":2,"name":"Window Materials Guide","item":"https://salazarandsonswindow.com/window-materials.html"}]}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html"><img width="620" height="800" src="images/icon.png" loading="eager" alt="Salazar & Sons Window Co." class="nav-logo-img"></a>
+    <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#why">Why Us</a></li>
+    <li><a href="index.html#process">Process</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="window-materials.html">Window Guide</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="index.html#reviews">Reviews</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li class="menu-cta">
+      <a href="tel:+14699093185" class="btn-primary">Call (469) 909-3185</a>
+      <button type="button" class="btn-secondary" onclick="toggleNavMenu(); openEstimateModal();">Get a free estimate</button>
+      <span>Mon–Fri, 8 AM–6 PM · Serving all of DFW</span>
+    </li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1.5rem;">
+    <a href="tel:+14699093185" class="nav-phone" style="display:inline-flex;align-items:center;gap:0.4rem;color:var(--navy);text-decoration:none;font-weight:600;font-size:0.95rem;letter-spacing:0.02em;transition:color 0.3s;" onmouseover="this.style.color='var(--steel)'" onmouseout="this.style.color='var(--navy)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.4 21 3 13.6 3 4.5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
+      (469) 909-3185
+    </a>
+    <button class="nav-cta" onclick="openEstimateModal()">
+  Free Estimate
+</button>
+    <button class="nav-toggle" id="navToggle" onclick="toggleNavMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="about-head">
+  <div>
+    <div class="section-tag">Window Guide</div>
+    <h1>Window materials, explained</h1>
+  </div>
+  <p>Vinyl, fiberglass, aluminum, wood, and composite: how they compare, and how to choose for a Texas home.</p>
+</section>
+
+<!-- MATERIALS -->
+<section class="mat">
+  <div class="mat-inner">
+    <div class="mat-intro">
+      <h2>At a glance</h2>
+      <p>How the five common window materials compare.</p>
+    </div>
+    <p class="mt-swipe">Swipe the table to compare all five.</p>
+    <div class="mt-wrap">
+      <table class="mt">
+        <thead><tr><th><span class="sr-only">Feature</span></th><th scope="col">Vinyl</th><th scope="col">Fiberglass</th><th scope="col">Aluminum</th><th scope="col">Wood</th><th scope="col">Composite</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Energy efficiency</th><td>Very good</td><td>Excellent</td><td>Fair*</td><td>Very good</td><td>Excellent</td></tr>
+          <tr><th scope="row">Maintenance</th><td>Very low</td><td>Low</td><td>Low</td><td>High</td><td>Low</td></tr>
+          <tr><th scope="row">Color options</th><td>Limited</td><td>Paintable</td><td>Wide</td><td>Unlimited</td><td>Moderate</td></tr>
+          <tr><th scope="row">Holds up to Texas heat</th><td>Good**</td><td>Excellent</td><td>Excellent</td><td>Fair</td><td>Very good</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-note">* Much better with a thermal break. ** Quality vinyl with reinforced, welded frames.</p>
+    <div class="m-list">
+    <article class="m-item" id="vinyl">
+      <div class="m-intro">
+        <span class="m-badge">Most popular in DFW</span>
+        <h2>Vinyl</h2>
+        <p>Low maintenance and energy efficient, which is why most homeowners choose it.</p>
+        <p class="m-best"><strong>Best for:</strong> Most homes, and replacing old aluminum windows</p>
+      </div>
+      <div class="m-lists">
+        <div>
+          <h3>Why people choose it</h3>
+          <ul class="m-pros">
+            <li>Never needs painting or sealing</li>
+            <li>Hollow, chambered frames insulate well</li>
+            <li>Won't rot, swell, or rust</li>
+            <li>Strong performance for the cost</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Good to know</h3>
+          <ul class="m-cons">
+            <li>Quality varies a lot: cheap vinyl can warp or fade in Texas sun</li>
+            <li>Look for welded corners and reinforced frames</li>
+            <li>Fewer colors (white, almond, clay; some lines offer black)</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    <article class="m-item" id="fiberglass">
+      <div class="m-intro">
+        <h2>Fiberglass</h2>
+        <p>Very strong and stable, and it can be painted.</p>
+        <p class="m-best"><strong>Best for:</strong> Darker colors, slim frames, and long-term durability</p>
+        <p class="m-brands">Ask us about fiberglass and aluminum-clad wood windows from Andersen and Pella.</p>
+      </div>
+      <div class="m-lists">
+        <div>
+          <h3>Why people choose it</h3>
+          <ul class="m-pros">
+            <li>Expands and contracts about as much as glass, so seals stay tight</li>
+            <li>Strong enough for slimmer frames and more glass</li>
+            <li>Can be painted almost any color</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Good to know</h3>
+          <ul class="m-cons">
+            <li>Costs more than vinyl</li>
+            <li>Fewer manufacturers to choose from</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    <article class="m-item" id="aluminum">
+      <div class="m-intro">
+        <h2>Aluminum</h2>
+        <p>Slim and strong, but metal conducts heat.</p>
+        <p class="m-best"><strong>Best for:</strong> Modern designs where thin frames matter most</p>
+      </div>
+      <div class="m-lists">
+        <div>
+          <h3>Why people choose it</h3>
+          <ul class="m-pros">
+            <li>Very strong with thin, modern frames</li>
+            <li>Durable and low maintenance</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Good to know</h3>
+          <ul class="m-cons">
+            <li>Least energy efficient unless it has a thermal break</li>
+            <li>Prone to condensation in cold weather</li>
+            <li>Many older DFW homes still have single-pane aluminum windows, and replacing them is one of the biggest energy upgrades you can make</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    <article class="m-item" id="wood">
+      <div class="m-intro">
+        <h2>Wood</h2>
+        <p>Classic and warm, with the most upkeep.</p>
+        <p class="m-best"><strong>Best for:</strong> Historic homes where the look comes first</p>
+        <p class="m-brands">Ask us about fiberglass and aluminum-clad wood windows from Andersen and Pella.</p>
+      </div>
+      <div class="m-lists">
+        <div>
+          <h3>Why people choose it</h3>
+          <ul class="m-pros">
+            <li>Traditional look that can be stained or painted</li>
+            <li>Natural insulator</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Good to know</h3>
+          <ul class="m-cons">
+            <li>Needs regular painting or sealing</li>
+            <li>Can rot or swell if moisture gets in</li>
+            <li>Usually the most expensive option</li>
+            <li>Often "clad" with aluminum or vinyl outside to cut upkeep</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    <article class="m-item" id="composite">
+      <div class="m-intro">
+        <h2>Composite</h2>
+        <p>The look of wood with far less maintenance.</p>
+        <p class="m-best"><strong>Best for:</strong> Wood character without the upkeep</p>
+      </div>
+      <div class="m-lists">
+        <div>
+          <h3>Why people choose it</h3>
+          <ul class="m-pros">
+            <li>Blend of wood fiber and polymer: strong and stable</li>
+            <li>Resists rot and moisture</li>
+            <li>Can mimic the look of wood</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Good to know</h3>
+          <ul class="m-cons">
+            <li>Costs more than vinyl</li>
+            <li>Limited brands and styles</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    </div>
+  </div>
+</section>
+
+<!-- BUENA VISTA -->
+<section class="bv">
+  <div class="bv-inner">
+    <div class="bv-copy">
+      <div class="section-tag">Made in DFW</div>
+      <h2>Buena Vista vinyl windows</h2>
+      <p>Built in Farmers Branch by a small manufacturer focused on quality, Buena Vista keeps the choice simple with two vinyl series. Both use dual-pane Low-E glass filled with argon, aluminum-reinforced frames, and constant-force balances for smooth, steady operation.</p>
+    </div>
+    <div class="bv-series">
+      <div class="bv-card">
+        <h3>B-21 Series</h3>
+        <ul>
+          <li>3&#188;" frame with a beveled face and sloped sill</li>
+          <li>Tilt-in sashes: clean both sides from inside</li>
+          <li>Available in black and painted finishes</li>
+        </ul>
+      </div>
+      <div class="bv-card">
+        <h3>9600 Series</h3>
+        <ul>
+          <li>Slimmer 3" frame with a clean, flat face</li>
+          <li>Side-load sashes</li>
+          <li>White, almond, and clay</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLASS AND INSTALLATION -->
+<section class="glass-note">
+  <h2>The frame is only half the story</h2>
+  <div class="glass-grid">
+    <div><h3>Low-E glass</h3><p>A thin, invisible coating that reflects the sun's heat, keeping your home cooler in a Texas summer.</p></div>
+    <div><h3>Argon gas</h3><p>Fills the space between panes to slow heat transfer and quiet outside noise.</p></div>
+    <div><h3>Installation</h3><p>Even the best window leaks if it's installed wrong. Every window we install comes with our lifetime leak warranty.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="portfolio-cta">
+  <div>
+    <h2>Not sure which is right for your home?</h2>
+    <p>We will walk you through the options at your free, no-obligation estimate.</p>
+  </div>
+  <div class="portfolio-cta-buttons">
+    <a href="tel:+14699093185" class="btn-primary">Call (469) 909-3185</a>
+    <button type="button" class="btn-ghost" onclick="openEstimateModal()">Request an estimate online</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-cols">
+    <div class="footer-brand">
+      <img width="800" height="650" src="images/salazar-sons-logo-inv.png" loading="lazy" alt="Salazar &amp; Sons Window Co." class="footer-logo-img">
+      <p>Family-owned window installation, replacement, and repair in Dallas-Fort Worth.</p>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/salazarandsonswindow/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/salazarsonswindow/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@salazarsons.window" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      </a>
+      <a href="https://share.google/jhN7no9mpjALI7C3J" target="_blank" rel="noopener" aria-label="Google Business Profile">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+      </a>
+    </div>
+    </div>
+    <div class="footer-col">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="index.html#services">Window installation</a></li>
+        <li><a href="index.html#services">Window replacement</a></li>
+        <li><a href="index.html#services">Repair and reframing</a></li>
+        <li><a href="index.html#services">Window additions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="window-materials.html">Window guide</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <ul>
+        <li><a href="tel:+14699093185" class="footer-phone">(469) 909-3185</a></li>
+        <li><a href="mailto:salazarwindowco@gmail.com">salazarwindowco@gmail.com</a></li>
+        <li>Mon–Fri, 8 AM–6 PM</li>
+        <li>Dallas, TX, serving all of DFW</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Salazar &amp; Sons Window Co.</span>
+    <span>Licensed and insured in Dallas, TX</span>
+  </div>
+</footer>
+
+<!-- Estimate Popup Modal -->
+<div id="estimateModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="estimateTitle">
+  <div class="modal-content">
+    
+    <button type="button" class="close-btn" onclick="closeEstimateModal()" aria-label="Close">&times;</button>
+
+    <h2 id="estimateTitle">Free Estimate</h2>
+    <p>Fill out the form below and we’ll contact you shortly.</p>
+
+    <form action="https://formsubmit.co/salazarwindowco@gmail.com" method="POST" class="estimate-form">
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Free Estimate Request">
+
+      <input type="text" name="name" placeholder="Full Name" required>
+
+      <input type="email" name="email" placeholder="Email Address" required>
+
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+
+      <textarea name="message" rows="5" placeholder="Tell us about your project"></textarea>
+
+      <button type="submit" class="btn-primary submit-btn">
+        Submit Request
+      </button>
+    </form>
+
+  </div>
+</div>
+<script>
+  // Slim the nav once the page scrolls
+  (function () {
+    const nav = document.querySelector('nav');
+    const update = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
+  function openEstimateModal() {
+    document.getElementById('estimateModal').style.display = 'flex';
+  }
+
+  function toggleNavMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+    const toggle = document.getElementById('navToggle');
+    const isActive = document.getElementById('navLinks').classList.contains('active');
+    toggle.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', isActive);
+  }
+
+  // Close the mobile menu when a nav link is tapped.
+  document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('active');
+      document.getElementById('navToggle').classList.remove('active');
+      document.getElementById('navToggle').setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  function closeEstimateModal() {
+    document.getElementById('estimateModal').style.display = 'none';
+  }
+
+  // Close the modal when clicking its backdrop.
+  window.onclick = function(event) {
+    const estimateModal = document.getElementById('estimateModal');
+    if (event.target === estimateModal) closeEstimateModal();
+  }
+
+  // Allow the Escape key to close the popup.
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeEstimateModal();
+    }
+  });
+</script>
+</body>
+</html>

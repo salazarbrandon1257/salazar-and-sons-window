@@ -11,6 +11,7 @@ Website for **Salazar & Sons Window Co.**, a family-owned window installation, r
 - **Home** (`index.html`): hero with estimate form, services, why choose us, process, reviews slider, FAQ, and call-to-action
 - **Portfolio** (`portfolio.html`): featured before/after project and a gallery of past jobs
 - **About** (`about.html`): owner story, proof points, and call-to-action
+- **Window Guide** (`window-materials.html`): compares vinyl, fiberglass, aluminum, wood, and composite windows, plus the Buena Vista vinyl lines
 - **404** (`404.html`): shown by GitHub Pages for missing URLs
 
 Shared across pages: top bar with phone menu, free-estimate pop-up form, and footer.
@@ -39,6 +40,7 @@ No build tools or package managers are required.
 ├── index.html          # Home page
 ├── portfolio.html      # Portfolio page (gallery data lives in its inline script)
 ├── about.html          # About page
+├── window-materials.html  # Window materials guide
 ├── 404.html            # Not-found page (uses root-relative paths)
 ├── styles.css          # Stylesheet for all pages
 ├── reviews-slider.js   # Drifting, draggable reviews row on the home page
