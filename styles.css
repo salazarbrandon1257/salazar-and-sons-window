@@ -1087,8 +1087,19 @@ footer {
 .mt-note { color: #6a7a90; font-size: 0.85rem; margin-top: 0.8rem; }
 /* phones: keep row labels pinned while the table scrolls sideways */
 .mt tbody th, .mt thead th:first-child { position: sticky; left: 0; background: var(--white); z-index: 1; }
-.mt-swipe { display: none; color: #6a7a90; font-size: 0.85rem; margin-bottom: 0.6rem; }
-@media (max-width: 700px) { .mt-swipe { display: block; } }
+/* phones: the table becomes one card per material */
+.mt-cards { display: none; }
+@media (max-width: 700px) {
+  .mt-wrap { display: none; }
+  .mt-cards { display: grid; gap: 0.8rem; }
+  .mt-card { position: relative; background: var(--white); border-radius: 16px; padding: 1.1rem 1.2rem 0.6rem; box-shadow: 0 6px 20px rgba(16,33,61,0.06); }
+  .mt-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--navy); margin-bottom: 0.4rem; }
+  .mt-card dl > div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0; border-top: 1px solid #e4e9f0; font-size: 0.92rem; }
+  .mt-card dt { color: #5a6a80; }
+  .mt-card dd { color: var(--navy); font-weight: 500; text-align: right; }
+  .mt-card .cost { font-weight: 600; letter-spacing: 0.08em; color: var(--navy); }
+  .mt-card .cost-off { color: #c9d2de; }
+}
 .m-list { margin-top: 4rem; display: grid; gap: 1.2rem; }
 .m-item { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3rem; background: var(--white); border-radius: 18px; padding: 2.2rem 2.4rem; box-shadow: 0 6px 20px rgba(16,33,61,0.05); scroll-margin-top: 6rem; }
 .m-badge { display: inline-block; background: var(--navy); color: var(--white); font-size: 0.75rem; padding: 0.3rem 0.7rem; border-radius: 999px; margin-bottom: 0.7rem; }
