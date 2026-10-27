@@ -162,7 +162,7 @@ nav.scrolled .nav-logo-img { height: 44px; }
   max-width: 420px;
   box-shadow: 0 10px 40px rgba(16,33,61,0.08), 0 2px 8px rgba(16,33,61,0.04);
 }
-.hero-form h3 {
+.hero-form h2 {
   font-family: 'Playfair Display', serif;
   font-size: 1.75rem;
   font-weight: 700;
@@ -349,7 +349,7 @@ nav.scrolled .nav-logo-img { height: 44px; }
 .why-content .section-sub { color: #556; text-align: left; margin: 0 0 2.5rem; max-width: 46ch; }
 .why-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2rem; }
 .why-feature { border-top: 2px solid var(--steel); padding-top: 0.9rem; }
-.why-feature h4 { font-weight: 600; font-size: 0.98rem; margin-bottom: 0.3rem; color: var(--navy); }
+.why-feature h3 { font-weight: 600; font-size: 0.98rem; margin-bottom: 0.3rem; color: var(--navy); }
 .why-feature p { font-size: 0.87rem; color: #667; line-height: 1.55; }
 .owner-note {
   background: var(--navy); color: var(--white);
@@ -406,7 +406,7 @@ nav.scrolled .nav-logo-img { height: 44px; }
   font-family: 'Playfair Display', serif; font-weight: 700; color: var(--white);
   background: var(--navy-mid); position: relative; z-index: 1;
 }
-.process-step h4 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.5rem; }
+.process-step h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.5rem; }
 .process-step p { color: var(--steel-light); font-size: 0.92rem; line-height: 1.6; }
 .step-when {
   display: inline-block; margin-top: 1rem;
