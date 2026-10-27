@@ -1131,3 +1131,27 @@ footer {
   .m-photo img { min-height: 0; max-height: 260px; }
 }
 @media (max-width: 560px) { .bv-series { grid-template-columns: 1fr; } }
+
+/* ── WINDOW GUIDE TABS (types / materials pages) ── */
+.about-head .guide-tabs { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+.guide-tabs a { padding: 0.6rem 1.2rem; border-radius: 999px; color: var(--steel-light); text-decoration: none; font-weight: 500; font-size: 0.95rem; border: 1px solid rgba(174,186,202,0.35); transition: color 0.2s, border-color 0.2s; }
+.guide-tabs a[aria-current="page"] { background: var(--white); color: var(--navy); border-color: var(--white); }
+.guide-tabs a:not([aria-current]):hover, .guide-tabs a:not([aria-current]):focus-visible { color: var(--white); border-color: var(--white); }
+
+/* ── WINDOW TYPES PAGE ── */
+.wt { background: var(--cream); color: var(--navy); padding: 4rem 4rem 4.5rem; }
+.wt-inner { max-width: 1100px; margin: 0 auto; }
+.wt-intro { color: #4a5a72; margin-bottom: 2rem; max-width: 64ch; line-height: 1.6; }
+.wt-intro a { color: var(--navy); }
+.wt-rows { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.wt-row { display: grid; grid-template-columns: 180px 1fr; gap: 1.3rem; align-items: center; background: var(--white); border-radius: 16px; padding: 0.8rem; box-shadow: 0 6px 20px rgba(16,33,61,0.05); scroll-margin-top: 6rem; }
+.wt-media { aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; background: #e8edf4; display: grid; place-items: center; }
+.wt-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wt-media .wt-icon { width: 38%; height: auto; }
+.wt-row h3 { display: flex; align-items: center; gap: 0.5rem; font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.3rem; }
+.wt-row h3 .wt-icon { width: 26px; height: 26px; flex-shrink: 0; }
+.wt-row p { font-size: 0.9rem; color: #445; line-height: 1.5; }
+.wt-row .wt-good { color: #6a7a90; font-size: 0.84rem; margin-top: 0.3rem; }
+@media (max-width: 1000px) { .wt-rows { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .wt { padding: 3rem 1.5rem 3.5rem; } }
+@media (max-width: 600px) { .wt { padding: 2.5rem 1.25rem 3rem; } .wt-row { grid-template-columns: 110px 1fr; gap: 0.9rem; } .guide-tabs a { padding: 0.55rem 1rem; font-size: 0.9rem; } }
