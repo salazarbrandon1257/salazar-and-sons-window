@@ -77,6 +77,19 @@ node --test
 1. Put the photos in a new folder under `portfolio/`.
 2. In `portfolio.html`, add a card to the grid and an entry to the `galleryProjects` list in the inline script. The card's `openGalleryModal(n)` number must match the entry's position in that list.
 
+### Adding a photo to the Window Guide
+
+In `window-materials.html`, give the material's `<article class="m-item">` the extra class `has-photo` and add a photo as the last thing inside it:
+
+```html
+<figure class="m-photo">
+  <img src="images/your-photo.jpg" width="720" height="960" loading="lazy" alt="Describe the window">
+  <figcaption>Short caption</figcaption>
+</figure>
+```
+
+The panel switches to the three-column layout (text, lists, photo) automatically.
+
 ---
 
 ## Deployment
