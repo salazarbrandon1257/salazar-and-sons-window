@@ -80,7 +80,8 @@ nav.scrolled {
   transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
 }
 .nav-cta { padding: 0.7rem 1.35rem 0.7rem 1.5rem; font-size: 0.92rem; white-space: nowrap; }
-nav a[href^="tel:"] { white-space: nowrap; }
+.nav-phone { white-space: nowrap; }
+.menu-cta { display: none; }
 .nav-cta::after, .btn-primary::after {
   content: ''; width: 0.95em; height: 0.95em; flex-shrink: 0;
   background: var(--steel-light);
@@ -634,8 +635,8 @@ nav.scrolled .nav-logo-img { height: 44px; }
   .footer-bottom { flex-direction: column; }
   .modal-content { padding: 2.25rem 1.4rem 1.6rem; }
   /* Top bar: phone becomes icon-only (number still read aloud) so the menu fits */
-  nav a[href^="tel:"] { font-size: 0 !important; gap: 0 !important; padding: 0.5rem; }
-  nav a[href^="tel:"] svg { width: 20px; height: 20px; }
+  .nav-phone { font-size: 0 !important; gap: 0 !important; padding: 0.5rem; }
+  .nav-phone svg { width: 20px; height: 20px; }
   .nav-cta { padding: 0.6rem 1rem 0.6rem 1.15rem; font-size: 0.85rem; }
   .modal-content h2 { font-size: 1.7rem; }
 }
@@ -702,18 +703,32 @@ footer {
     top: 100%; left: 0; right: 0;
     flex-direction: column;
     gap: 0;
-    background: rgba(255,255,255,0.98);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(16,33,61,0.10);
-    box-shadow: 0 12px 24px rgba(16,33,61,0.12);
+    padding-top: 0.4rem;
+    background: var(--white);
+    border-radius: 0 0 18px 18px;
+    /* second shadow dims the page behind the open menu */
+    box-shadow: 0 20px 40px rgba(16,33,61,0.18), 0 0 0 100vmax rgba(16,33,61,0.45);
+    clip-path: inset(0 -100vmax -100vmax -100vmax);   /* keep the dim off the top bar */
   }
   .nav-links.active { display: flex; }
   .nav-links li { width: 100%; }
   .nav-links a {
     display: block;
     padding: 1rem 1.5rem;
-    border-bottom: 1px solid rgba(16,33,61,0.06);
+    border-bottom: 1px solid rgba(16,33,61,0.07);
+    color: var(--navy);
+    font-size: 1.1rem; font-weight: 600;
+    text-transform: none; letter-spacing: 0;
   }
+  .nav-links .menu-cta { display: flex; flex-direction: column; gap: 0.7rem; padding: 1.5rem; }
+  .nav-links .menu-cta a, .nav-links .menu-cta button {
+    display: inline-flex; justify-content: center; width: 100%;
+    padding: 1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.01em;
+  }
+  .nav-links .menu-cta .btn-primary { color: var(--white); border-bottom: 0; }
+  .nav-links .menu-cta .btn-secondary { cursor: pointer; }
+  .menu-cta span { color: var(--gray); font-size: 0.85rem; text-align: center; }
   .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; background-size: cover; background-position: 62% 100%; }
   .hero::before { background: rgba(17,19,24,0.7); }
   .services { padding: 4rem 1.5rem; }
@@ -784,7 +799,6 @@ footer {
 @keyframes promoPop { from { opacity: 0; transform: translateY(18px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @media (max-width: 600px) { .promo-content { padding: 2.75rem 1.5rem 2rem; } }
 @media (max-width: 480px) {
-  nav a[href^="tel:"] { display: none; }
   .hero-form { padding: 2rem 1.5rem; }
 }
 
@@ -1022,8 +1036,8 @@ footer {
   .faq-item p { padding-right: 0; }
 }
 @media (min-width: 901px) and (max-width: 1100px) {
-  nav a[href^="tel:"] { font-size: 0 !important; gap: 0 !important; padding: 0.5rem; }
-  nav a[href^="tel:"] svg { width: 20px; height: 20px; }
+  .nav-phone { font-size: 0 !important; gap: 0 !important; padding: 0.5rem; }
+  .nav-phone svg { width: 20px; height: 20px; }
 }
 @media (min-width: 901px) and (max-width: 1200px) {
   /* keep the top bar on one line on small laptops */
