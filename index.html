@@ -232,7 +232,7 @@
     <p class="hero-title">Windows done right.</p>
     <p class="hero-lead">Family-owned in Dallas, TX. We install, replace, repair, and add windows with craftsmanship you can see and quality that lasts.</p>
     <div class="hero-buttons">
-      <a href="tel:+14699093185" class="btn-primary">Call for a free estimate</a>
+      <a href="tel:+14699093185" class="btn-primary call-or-form">Call for a free estimate</a>
       <a href="#services" class="btn-secondary">See our services</a>
     </div>
     <ul class="hero-trust">
@@ -285,7 +285,7 @@
       <div class="service-body">
         <h3>Window installation</h3>
         <p>New construction or first-time installs, handled from measurement to finishing for a tight fit and seal every time.</p>
-        <a href="tel:+14699093185" class="service-link">Get a quote</a>
+        <a href="tel:+14699093185" class="service-link call-or-form">Get a quote</a>
       </div>
     </article>
     <article class="service-card">
@@ -293,7 +293,7 @@
       <div class="service-body">
         <h3>Window replacement</h3>
         <p>Swap old, drafty, or damaged windows for modern energy-efficient ones, with minimal disruption to your home.</p>
-        <a href="tel:+14699093185" class="service-link">Get a quote</a>
+        <a href="tel:+14699093185" class="service-link call-or-form">Get a quote</a>
       </div>
     </article>
     <article class="service-card">
@@ -301,7 +301,7 @@
       <div class="service-body">
         <h3>Repair and reframing</h3>
         <p>Rotted frames, custom trim, and resizing out-of-standard openings, rebuilt right so your new window fits clean and seals tight.</p>
-        <a href="tel:+14699093185" class="service-link">Get a quote</a>
+        <a href="tel:+14699093185" class="service-link call-or-form">Get a quote</a>
       </div>
     </article>
     <article class="service-card">
@@ -309,7 +309,7 @@
       <div class="service-body">
         <h3>Window additions</h3>
         <p>Want a window where there isn't one? We cut and frame a new opening and install it, including specialty styles like gas-strut windows.</p>
-        <a href="tel:+14699093185" class="service-link">Get a quote</a>
+        <a href="tel:+14699093185" class="service-link call-or-form">Get a quote</a>
       </div>
     </article>
   </div>
@@ -359,7 +359,7 @@
       <div class="section-tag">How It Works</div>
       <h2 class="section-title">From first call to finished window</h2>
     </div>
-    <a href="tel:+14699093185" class="btn-primary">Call for a free estimate</a>
+    <a href="tel:+14699093185" class="btn-primary call-or-form">Call for a free estimate</a>
   </div>
   <ol class="process-steps">
     <li class="process-step">
@@ -685,8 +685,8 @@
     setTimeout(openPromoModal, 450);
   });
 
-  // "Get a quote" calls on phones; on computers it opens the estimate form instead.
-  document.querySelectorAll('.service-link').forEach(function(link) {
+  // "Get a quote" and "Call for a free estimate" call on phones; on computers they open the estimate form instead.
+  document.querySelectorAll('.call-or-form').forEach(function(link) {
     link.addEventListener('click', function(event) {
       if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
         event.preventDefault();
