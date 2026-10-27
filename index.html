@@ -202,7 +202,7 @@
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="images/hero-home.jpg" fetchpriority="high">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -214,7 +214,13 @@
     <li><a href="#why">Why Us</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="window-materials.html">Window Guide</a></li>
+    <li class="nav-drop">
+      <button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="guideMenu">Window Guide<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></button>
+      <ul class="nav-sub" id="guideMenu">
+        <li><a href="window-types.html"><strong>Window Types</strong><span>How each window opens</span></a></li>
+        <li><a href="window-materials.html"><strong>Window Materials</strong><span>Vinyl, fiberglass, aluminum, and wood</span></a></li>
+      </ul>
+    </li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#faq">FAQ</a></li>
@@ -671,6 +677,15 @@
     toggle.classList.toggle('active');
     toggle.setAttribute('aria-expanded', isActive);
   }
+
+  // Window Guide dropdown: opens on hover with CSS; click and Escape for touch and keyboard.
+  (function() {
+    var drop = document.querySelector('.nav-drop'), btn = drop.querySelector('.nav-drop-btn');
+    function setOpen(open) { drop.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); }
+    btn.addEventListener('click', function(e) { e.stopPropagation(); setOpen(!drop.classList.contains('open')); });
+    document.addEventListener('click', function(e) { if (!drop.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && drop.classList.contains('open')) { setOpen(false); btn.focus(); } });
+  })();
 
   // Close the mobile menu when a nav link is tapped.
   document.querySelectorAll('.nav-links a').forEach(function(link) {

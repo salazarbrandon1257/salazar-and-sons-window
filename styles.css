@@ -1049,7 +1049,7 @@ footer {
   /* keep the top bar on one line on small laptops */
   nav { padding-left: 2rem; padding-right: 2rem; }
   .nav-links { gap: 1.1rem; }
-  .nav-links a { font-size: 0.8rem; letter-spacing: 0.03em; white-space: nowrap; }
+  .nav-links a, .nav-drop-btn { font-size: 0.8rem; letter-spacing: 0.03em; white-space: nowrap; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -1057,11 +1057,11 @@ footer {
 @media (min-width: 901px) { .nav-links { margin: 0 1.25rem; } }
 @media (min-width: 901px) and (max-width: 1000px) {
   .nav-links { gap: 0.6rem; margin: 0 0.9rem; }
-  .nav-links a { font-size: 0.72rem; letter-spacing: 0.02em; }
+  .nav-links a, .nav-drop-btn { font-size: 0.72rem; letter-spacing: 0.02em; }
 }
 @media (min-width: 1201px) and (max-width: 1440px) {
   .nav-links { gap: 1.6rem; }
-  .nav-links a { font-size: 0.85rem; white-space: nowrap; }
+  .nav-links a, .nav-drop-btn { font-size: 0.85rem; white-space: nowrap; }
 }
 @media (min-width: 1201px) and (max-width: 1300px) { .nav-links { gap: 1.15rem; } }
 
@@ -1156,3 +1156,31 @@ footer {
 @media (max-width: 1000px) { .wt-rows { grid-template-columns: 1fr; } }
 @media (max-width: 900px) { .wt { padding: 3rem 1.5rem 3.5rem; } }
 @media (max-width: 600px) { .wt { padding: 2.5rem 1.25rem 3rem; } .wt-row { grid-template-columns: 110px 1fr; gap: 0.9rem; } .guide-tabs a { padding: 0.55rem 1rem; font-size: 0.9rem; } }
+
+/* ── WINDOW GUIDE DROPDOWN (nav) ── */
+.nav-drop { position: relative; }
+.nav-drop-btn { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0; background: none; border: 0; cursor: pointer; font-family: inherit;
+  color: var(--gray); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.3s; }
+.nav-drop-btn:hover { color: var(--steel); }
+.nav-drop-btn svg { width: 10px; height: 10px; transition: transform 0.2s; }
+.nav-sub { display: none; position: absolute; top: calc(100% + 1.1rem); left: 50%; transform: translateX(-50%); width: 300px; z-index: 5;
+  list-style: none; background: var(--white); border-radius: 14px; padding: 0.5rem; box-shadow: 0 18px 40px rgba(16,33,61,0.16); border: 1px solid rgba(16,33,61,0.08); }
+.nav-sub::before { content: ''; position: absolute; left: 0; right: 0; top: -1.2rem; height: 1.2rem; }   /* keeps hover alive across the gap */
+.nav-drop:hover .nav-sub, .nav-drop:focus-within .nav-sub, .nav-drop.open .nav-sub { display: block; }
+.nav-drop:hover .nav-drop-btn svg, .nav-drop.open .nav-drop-btn svg { transform: rotate(180deg); }
+.nav-links .nav-sub a { display: block; padding: 0.75rem 0.9rem; border-radius: 10px; text-transform: none; letter-spacing: 0; white-space: normal; }
+.nav-links .nav-sub a:hover, .nav-links .nav-sub a:focus-visible { background: var(--cream); }
+.nav-sub strong { display: block; color: var(--navy); font-size: 0.95rem; font-weight: 600; }
+.nav-sub span { display: block; color: #6a7a90; font-size: 0.82rem; font-weight: 400; margin-top: 0.15rem; }
+@media (max-width: 900px) {
+  /* phone menu: the two pages sit indented under the label */
+  .nav-drop-btn { display: block; width: 100%; padding: 1rem 1.5rem; text-align: left; cursor: default; color: var(--navy); font-size: 1.1rem; font-weight: 600;
+    text-transform: none; letter-spacing: 0; border-bottom: 1px solid rgba(16,33,61,0.07); }
+  .nav-drop-btn:hover { color: var(--navy); }
+  .nav-drop-btn svg { display: none; }
+  .nav-sub, .nav-drop:hover .nav-sub { display: block; position: static; transform: none; width: auto; box-shadow: none; border: 0; border-radius: 0; padding: 0; }
+  .nav-sub::before { display: none; }
+  .nav-links .nav-sub a { padding: 0.75rem 1.5rem 0.75rem 2.6rem; border-radius: 0; }
+  .nav-sub strong { font-size: 1rem; font-weight: 500; }
+  .nav-sub span { display: none; }
+}
