@@ -7,8 +7,19 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TEPP27488B');
+  // Only record visits to the live site, not local previews
+  if (location.hostname.endsWith('salazarandsonswindow.com')) {
+    gtag('js', new Date());
+    gtag('config', 'G-TEPP27488B');
+  }
+  // Count estimate requests and phone taps as leads
+  document.addEventListener('submit', function (e) {
+    if (e.target.matches('form[action*="formsubmit.co"]')) gtag('event', 'generate_lead', { form_name: e.target.className });
+  });
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="tel:"]');
+    if (link) gtag('event', 'click_to_call', { link_text: link.textContent.trim() });
+  });
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us | Salazar & Sons Window Co.</title>
