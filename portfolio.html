@@ -7,18 +7,30 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  // Only record visits to the live site, not local previews
+  // Only record visits to the live site (Analytics and Meta Pixel), not local previews
   if (location.hostname.endsWith('salazarandsonswindow.com')) {
     gtag('js', new Date());
     gtag('config', 'G-TEPP27488B');
+    // Meta Pixel
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1666609791859335');
+    fbq('track', 'PageView');
   }
   // Count estimate requests and phone taps as leads
   document.addEventListener('submit', function (e) {
-    if (e.target.matches('form[action*="formsubmit.co"]')) gtag('event', 'generate_lead', { form_name: e.target.className });
+    if (!e.target.matches('form[action*="formsubmit.co"]')) return;
+    gtag('event', 'generate_lead', { form_name: e.target.className });
+    if (window.fbq) fbq('track', 'Lead');
   });
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href^="tel:"]');
-    if (link && !e.defaultPrevented) gtag('event', 'click_to_call', { link_text: link.innerText.trim() });
+    if (!link || e.defaultPrevented) return;
+    gtag('event', 'click_to_call', { link_text: link.innerText.trim() });
+    if (window.fbq) fbq('track', 'Contact');
   });
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,8 +58,9 @@
 <meta name="twitter:description" content="Professional window installation, replacement &amp; repair across DFW. Free estimates. Licensed &amp; insured.">
 
 <!-- Favicon (moved from body) -->
-<link rel="icon" type="image/x-icon" href="images/favicon.ico">
-<link rel="apple-touch-icon" href="images/icon.png">
+<link rel="icon" href="images/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <meta name="theme-color" content="#0a1a2f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
