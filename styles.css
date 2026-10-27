@@ -1150,6 +1150,8 @@ footer {
 .wt-media .wt-icon { width: 38%; height: auto; }
 .wt-row h3 { display: flex; align-items: center; gap: 0.5rem; font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.3rem; }
 .wt-row h3 .wt-icon { width: 26px; height: 26px; flex-shrink: 0; }
+.wt-cost { margin-left: auto; padding-left: 0.6rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; color: var(--navy); }
+.wt-cost-off { color: #c9d2de; }
 .wt-row p { font-size: 0.9rem; color: #445; line-height: 1.5; }
 .wt-row .wt-good { color: #6a7a90; font-size: 0.84rem; margin-top: 0.3rem; }
 @media (max-width: 1000px) { .wt-rows { grid-template-columns: 1fr; } }
