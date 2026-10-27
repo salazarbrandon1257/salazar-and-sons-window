@@ -18,7 +18,7 @@
   });
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href^="tel:"]');
-    if (link && !e.defaultPrevented) gtag('event', 'click_to_call', { link_text: link.textContent.trim() });
+    if (link && !e.defaultPrevented) gtag('event', 'click_to_call', { link_text: link.innerText.trim() });
   });
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
