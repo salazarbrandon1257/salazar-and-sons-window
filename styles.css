@@ -468,13 +468,25 @@ nav.scrolled .nav-logo-img { height: 44px; }
 }
 .review-name { display: block; font-weight: 600; font-size: 0.92rem; }
 .review-loc { display: block; color: var(--gray); font-size: 0.8rem; }
+/* Google rating pill under the reviews */
 .reviews-google {
-  display: inline-block;
+  position: relative; display: inline-flex; align-items: center; gap: 0.75rem;
   margin-top: 2.25rem;
-  color: var(--white); font-size: 0.95rem;
-  text-underline-offset: 4px;
+  padding: 0.7rem 1.3rem 0.7rem 0.8rem;
+  border-radius: 999px;
+  background: var(--white); color: var(--navy);
+  font-size: 0.95rem; text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.reviews-google:hover { color: var(--steel-light); }
+.reviews-google:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(0,0,0,0.32); }
+.reviews-google:focus-visible { outline: 2px solid var(--steel-light); outline-offset: 4px; }
+.reviews-google .g-logo { width: 26px; height: 26px; flex-shrink: 0; }
+.reviews-google strong { font-size: 1.05rem; }
+.rg-stars { color: #e3b341; letter-spacing: 2px; }
+.rg-sep { width: 1px; height: 18px; background: rgba(16,33,61,0.18); }
+.rg-count { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 700px) { .reviews-google { font-size: 0.85rem; gap: 0.55rem; } }
 
   /* ── ABOUT ── */
 .section-tag {
